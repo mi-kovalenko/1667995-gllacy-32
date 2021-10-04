@@ -8,7 +8,7 @@
   <header>
     <nav class="navigation">
       <a class="navigation-logo" href="index.html">
-        <img src="" alt="логотип Глейси." />
+        <img src="#" alt="логотип Глейси." />
       </a>
       <ul class="navigation-left">
         <li class="navigation-left-item">
@@ -47,16 +47,15 @@
   <main>
     <h1 class="visually-hidden">Магазин мороженого "Глейси".</h1>
 
-    <section class="slideshow-strawberry">
-      <!-- PLS HALP -->
+    <!-- <section class="slideshow-strawberry">
       <h2>Нежный пломбир с клубничным джемом</h2>
       <p>
         Натуральное мороженое из свежих сливок и молока с вкуснейшим
         клубничным джемом – это идеальный десерт для всей семьи.
       </p>
       <a class="slideshow-link" href="#">Заказать</a>
-      <img />
-    </section>
+      <img src="" alt=""/>
+    </section> -->
     <!-- так ли важно, как именно размечать пагинацию и похожие на неё штуки (через div или ul)? в демках у Василия  всё через ul, 
 но мне не нравится, что так кода больше и выглядит как-то более громоздко, а на семантику вроде не особо влияет-->
     <div class="slideshow-pagination">
@@ -87,27 +86,26 @@
         </a>
       </li>
     </ul>
-    </section>
-
     <section class="promo">
       <h2 class="promo-header">Заказывайте мороженое и получайте подарки!</h2>
       <article class="promo-item">
         <h3 class="promo-item-header">Малинка даром!</h3>
         <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
         <a class="promo-item-button" href="#">Хочу подарок</a>
-        <img src="" alt="Малина.">
+        <img src="#" alt="Малина.">
       </article>
       <article class="promo-item">
         <h3 class="promo-item-header">Маршмеллоу даром!</h3>
         <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
         <a class="promo-item-button" href="#">Хочу подарок</a>
-        <img src="" alt="Маршмеллоу.">
+        <img src="#" alt="Маршмеллоу.">
       </article>
     </section>
     <section class="popular">
       <h2 class="popular-header">Попробуйте самые популярные вкусы нашего мороженого</h2>
       <ul class="popular-list">
         <li class="popular-list-item">
+          <img class="popular-list-item-img" src="#" alt="Малинка.">
           <h3 class="popular-list-item-title">Малинка</h3>
           <p class="popular-list-item-description">Сливочное мороженое с малиновым джемом</p>
           <b class="popular-list-price">310 ₽/кг</b>
@@ -116,6 +114,7 @@
           </a>
         </li>
         <li class="popular-list-item">
+          <img class="popular-list-item-img" src="#" alt="Фисташка.">
           <h3 class="popular-list-item-title">Фисташка</h3>
           <p class="popular-list-item-description">Фисташковый пломбир с кусочками шоколада</p>
           <b class="popular-list-price">340 ₽/кг</b>
@@ -124,6 +123,7 @@
           </a>
         </li>
         <li class="popular-list-item">
+          <img class="popular-list-item-img" src="#" alt="Черника.">
           <h3 class="popular-list-item-title">Черника</h3>
           <p class="popular-list-item-description">Крем-брюле с черничным джемом</p>
           <b class="popular-list-price">330 ₽/кг</b>
@@ -132,6 +132,7 @@
           </a>
         </li>
         <li class="popular-list-item">
+          <img class="popular-list-item-img" src="#" alt="Бабл-гам.">
           <h3 class="popular-list-item-title">Бабл-гам</h3>
           <p class="popular-list-item-description">Ванильный пломбир со сладкой посыпкой</p>
           <b class="popular-list-price">320 ₽/кг</b>
@@ -178,7 +179,7 @@
       <h2 class="visually-hidden">Подписаться на рассылку</h2>
       <p>Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит.
         Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-      <form class="newsletter-form" action="" method="POST">
+      <form class="newsletter-form" action="#" method="POST">
         <label class="visually-hidden" for="newsletter-email">Email</label>
         <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email"
           required>
@@ -189,7 +190,7 @@
       <h2 class="delivery-header">Доставка любимого мороженого на дом</h2>
       <p class="delivery-description">Хочется полакомиться любимым десертом, но нет времени съездить в магазин?
         Закажите доставку мороженого на дом и курьер привезет вам ваш заказ в течение часа!</p>
-      <form class="delivery-form" action="" method="POST">
+      <form class="delivery-form" action="#" method="POST">
         <fieldset>
           <legend>Укажите адрес и дату доставки, и мы свяжемся с вами, чтобы подтвердить заказ.</legend>
           <label for="delivery-date">Дата</label>
@@ -209,6 +210,7 @@
       </form>
     </section>
     <section class="contacts">
+      <h2 class="visually-hidden">Контакты магазина Глейси</h2>
       <div class="contacts-card">   
         <address>
           <p>Адрес главного офиса и офлайн-магазина:</p>
@@ -256,7 +258,7 @@
       </li>
     </ul>
     <div class="credits">
-      <img class="credits-logo" src="" alt="Логотип Глейси.">
+      <img class="credits-logo" src="#" alt="Логотип Глейси.">
       <p class="credits-organization">Сделано в <u>.html academy</u> © 2021</p>
     </div>
   </footer>
