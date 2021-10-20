@@ -182,10 +182,10 @@ ul, ol {
 }
 
 label {
-font-weight: bold;
-font-size: 16px;
-line-height: 20px;
-color: #2D3440;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2D3440;
 }
 /* не уверена, что хорошо вот так задавать стиль всем элементам. штош */
 
@@ -206,7 +206,7 @@ color: #2D3440;
 }
 
 address {
-font-style: normal;
+  font-style: normal;
 }
 
 address b, .contacts-phone {
@@ -232,9 +232,9 @@ address b, .contacts-phone {
 /* подвал */
 
 .footer-menu {
-font-size: 14px;
-line-height: 20px;
-color: #2D3440;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
 }
 
 .supply {
@@ -254,11 +254,11 @@ color: #2D3440;
 /* /* каталог */ 
 
 .breadcrumbs-item {
-font-weight: bold;
-font-size: 14px;
-line-height: 20px;
-color: #2D3440;
-text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: underline;
 }
 
 .breadcrumbs-item.current {
@@ -284,10 +284,10 @@ text-decoration: underline;
 /* собсно каталог */
 
 .catalogue-products-type {
-font-weight: 900;
-font-size: 32px;
-line-height: 46px;
-color: #2D3440;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
 }
 
 .catalogue-products-list-card-img {
@@ -319,9 +319,9 @@ color: #2D3440;
 }
 
 .catalogue-pagination-more {
-font-weight: bold;
-font-size: 16px;
-line-height: 20px;
-text-align: center;
-color: #2D3440;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #2D3440;
 }
