@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <title>HTML Academy: Глейси</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <header>
       <nav class="navigation">
         <a class="navigation-logo" href="https://htmlacademy.ru">
-          <img src="#" alt="логотип Глейси." />
+          <img src="/img/logo.svg" width="137" height="56" alt="логотип Глейси." />
         </a>
         <ul class="navigation-left">
           <li class="navigation-left-item">
@@ -34,11 +35,13 @@
           <li class="navigation-right-item">
             <a class="navigation-right-link" href="#">
               <span class="visually-hidden">Личный кабинет.</span>
+              <span>Вход</span>
             </a>
           </li>
           <li class="navigation-right-item">
             <a class="navigation-right-link" href="#">
               <span class="visually-hidden">Корзина.</span>
+              <span>2 товара</span>
             </a>
           </li>
         </ul>
@@ -52,10 +55,11 @@
         <li class="breadcrumbs-item">
           <a class="breadcrumbs-item-link" href="#">Каталог</a>
         </li>
-        <li class="breadcrumbs-item">
-          <a class="breadcrumbs-item-link-current" href="#">Сливочное</a>
+        <li class="breadcrumbs-item current">
+          <a class="breadcrumbs-item-link" href="#">Сливочное</a>
         </li>
       </ul>
+      <h2 class="catalogue-products-type">Сливочное мороженое</h2>
       <section class="filter">
         <h2 class="visually-hidden">Фильтры</h2>
         <form class="filter-set" action="#" method="GET">
@@ -162,12 +166,11 @@
       </section>
       <section class="catalogue-products">
         <h2 class="visually-hidden">Список товаров</h2>
-        <h2 class="catalogue-products-type">Сливочное</h2>
         <ol class="catalogue-products-list">
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Малинка.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/raspberry.png" alt="Малинка.">
                 <h3 class="catalogue-products-list-card-title">Малинка</h3>
                 <p class="catalogue-products-list-card-description">Сливочное мороженое с малиновым джемом</p>
               </a>
@@ -180,7 +183,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Фисташка.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/pistachio.png" alt="Фисташка.">
                 <h3 class="catalogue-products-list-card-title">Фисташка</h3>
                 <p class="catalogue-products-list-card-description">Фисташковый пломбир с кусочками шоколада</p>
               </a>
@@ -193,7 +196,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Черника.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/blueberry.png" alt="Черника.">
                 <h3 class="catalogue-products-list-card-title">Черника</h3>
                 <p class="catalogue-products-list-card-description">Крем-брюле с черничным джемом</p>
               </a>
@@ -206,7 +209,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Бабл-гам.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/bubblegum.png" alt="Бабл-гам.">
                 <h3 class="catalogue-products-list-card-title">Бабл-гам</h3>
                 <p class="catalogue-products-list-card-description">Ванильный пломбир со сладкой посыпкой</p>
               </a>
@@ -219,7 +222,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Ежевика.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/blackberry.png" alt="Ежевика.">
                 <h3 class="catalogue-products-list-card-title">Ежевика</h3>
                 <p class="catalogue-products-list-card-description">Сливочное мороженое с ежевичным джемом</p>
               </a>
@@ -232,7 +235,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Банан.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/banana.png" alt="Банан.">
                 <h3 class="catalogue-products-list-card-title">Банан</h3>
                 <p class="catalogue-products-list-card-description">Сливочный пломбир с банановым вкусом</p>
               </a>
@@ -245,7 +248,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Шоколадка.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/choco.png" alt="Шоколадка.">
                 <h3 class="catalogue-products-list-card-title">Шоколадка</h3>
                 <p class="catalogue-products-list-card-description">Классический шоколадный пломбир</p>
               </a>
@@ -258,7 +261,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Клубничка.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/strawberry.png" alt="Клубничка.">
                 <h3 class="catalogue-products-list-card-title">Клубничка</h3>
                 <p class="catalogue-products-list-card-description">Сливочный пломбир с клубничным вкусом</p>
               </a>
@@ -271,7 +274,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Лимон.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/lemon.png" alt="Лимон.">
                 <h3 class="catalogue-products-list-card-title">Лимон</h3>
                 <p class="catalogue-products-list-card-description">Освежающий лимонный сорбет</p>
               </a>
@@ -284,7 +287,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Ментол.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/menthol.png" alt="Ментол.">
                 <h3 class="catalogue-products-list-card-title">Ментол</h3>
                 <p class="catalogue-products-list-card-description">Сливочный пломбир с ментоловым сиропом</p>
               </a>
@@ -297,7 +300,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Орешек.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/nut.png" alt="Орешек.">
                 <h3 class="catalogue-products-list-card-title">Орешек</h3>
                 <p class="catalogue-products-list-card-description">Фисташковый пломбир с шоколадным сиропом</p>
               </a>
@@ -310,7 +313,7 @@
           <li class="catalogue-products-list-card">
             <div class="catalogue-products-list-link">
               <a href="#">
-                <img class="catalogue-products-list-card-img" src="#" alt="Крем-брюле.">
+                <img class="catalogue-products-list-card-img" src="/img/catalogue/creme-brulee.png" alt="Крем-брюле.">
                 <h3 class="catalogue-products-list-card-title">Крем-брюле</h3>
                 <p class="catalogue-products-list-card-description">Классическое крем-брюле</p>
               </a>
@@ -386,7 +389,7 @@
         </li>
       </ul>
       <div class="credits">
-        <a href="https://htmlacademy.ru"><img class="credits-logo" src="#" alt="Логотип htmlacademy." /></a>
+        <a href="https://htmlacademy.ru"><img class="credits-logo" src="/img/logo_htmlacademy.svg" width="93" height="27" alt="Логотип htmlacademy." /></a>
         <p class="credits-organization">
           Сделано в <a href="https://htmlacademy.ru">.html academy</a> © 2021
         </p>
