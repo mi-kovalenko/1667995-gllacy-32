@@ -22,7 +22,15 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   color: #565C66;
   font-family: Inter, sans-serif;
   font-weight: 400;
@@ -32,6 +40,12 @@ body {
   background-color: #FEAFC3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+  flex-grow: 1;
+  width: 1170px;
+  margin: 0 auto;
 }
 
 a {
@@ -48,6 +62,8 @@ h2 {
 }
 
 ul, ol {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -55,11 +71,30 @@ ul, ol {
   display: none;
 }
 
+/* навигация */
+
 .navigation {
+  width: 1170px;
+  margin: auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
   line-height: 20px;
 }
 
+.navigation-left {
+  margin-left: 16px;
+  display: flex;
+}
+
+.navigation-left-item {
+  padding: 8px 16px;
+}
+
 .navigation-right {
+  max-width: 419px;
+  display: flex;
+  margin-left: auto;
   font-size: 14px;
 }
 
@@ -74,6 +109,14 @@ ul, ol {
   color: #2D3440;
 }
 
+.slideshow-item {
+  display: flex;
+}
+
+.slideshow-item-description {
+  width: 470px;
+}
+
 .slideshow-item-description h3 {
   font-weight: 900;
   font-size: 36px;
@@ -81,6 +124,7 @@ ul, ol {
 }
 
 .slideshow-item-description p {
+  width: 414px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -91,10 +135,40 @@ ul, ol {
   text-align: center;
 }
 
+.slideshow-item-img {
+  margin-left: auto;
+  width: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 41px;
+}
+
+.slideshow-item-img-current {
+  display: flex;
+  align-items: center;
+}
+
 /* промо */
 
 .promo {
   color: #2D3440;
+}
+
+.promo-header {
+  width: 443px;
+  margin: auto;
+}
+
+.promo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-item {
+  width: 570px;
+  background-color: #FF7799;
+  border-radius: 16px;
 }
 
 .promo-item-header {
@@ -111,6 +185,21 @@ ul, ol {
 }
 
 /* популярное */
+
+.popular-header {
+  width: 527px;
+  margin: auto;
+}
+
+.popular-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-list-item {
+  width: 270px;
+  background-color: #FCFCFC;
+}
 
 .popular-list-item-img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -138,13 +227,44 @@ ul, ol {
 /* плюсы */
 
 .advantages {
+  width: 1170px;
   background-image: url("/img/advantages-background.jpg");
   background-repeat: no-repeat;
+  border-radius: 16px;
+}
+
+.advantages-card {
+  width: 1122px;
+  margin: 0 auto;
+  background-color: #FCFCFC;
+  border-radius: 16px;
+}
+
+.advantages-header {
+  width: 995px;
+  margin: auto;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* мне не нравится врап, потому что если добавить ещё один элемент внутрь, он окажется слева, хотя логичнее, чтобы он 
+помещался по центру. хз, подумаю ещё */
+
+.advantages-list-item {
+  width: 510px;
 }
 
 /* блог */
 
+.blog-news-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .blog {
+  width: 570px;
   background-color: #FCFCFC;
   background-image: url("/img/blog.jpg");
   background-repeat: no-repeat;
@@ -168,12 +288,21 @@ ul, ol {
 /* рассылка */
 
 .newsletter {
+  width: 570px;
   background-image: url("/img/newsletter-background-postal.png");
   background-repeat: no-repeat;
+  border-radius: 16px;
+}
+
+.newsletter-card {
+  width: 558px;
+  margin: 6px;
+  background: #FCFCFC;
+  border-radius: 16px;
 }
 
 .newsletter-button {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -181,13 +310,12 @@ ul, ol {
   background-color: #FF2F64;
 }
 
-label {
-  font-weight: bold;
+.delivery-label {
+  font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #2D3440;
 }
-/* не уверена, что хорошо вот так задавать стиль всем элементам. штош */
 
 /* доставка */
 
@@ -195,6 +323,28 @@ label {
   background-color: #FCFCFC;
   background-image: url("/img/delivery.jpg");
   background-repeat: no-repeat;
+  border-radius: 16px;
+}
+
+.delivery-container{
+  display: flex;
+}
+
+.delivery-description-container {
+  width: 371px;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.delivery-header {
+  text-align: left;
+}
+
+.delivery-form {
+  width: 500px;
+  background-color: #FCFCFC;
+  box-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
+  border-radius: 8px;
 }
 
 /* контакты */
@@ -203,13 +353,22 @@ label {
   background-color: #FCFCFC;
   background-image: url("/img/contacts.jpg");
   background-repeat: no-repeat;
+  border-radius: 16px;
 }
 
-address {
+.contacts-card {
+  width: 343px;
+  margin-left: 64px;
+  background-color: #FCFCFC;
+  box-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  border-radius: 8px;
+}
+
+.contacts-adress {
   font-style: normal;
 }
 
-address b, .contacts-phone {
+.contacts-adress b, .contacts-phone {
   color: #2D3440;
   font-weight: 700;
   font-size: 20px;
@@ -231,7 +390,22 @@ address b, .contacts-phone {
 
 /* подвал */
 
+.footer-container {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-socials {
+  width: 104px;
+  display: flex;
+}
+
 .footer-menu {
+  width: 360px;
+  /* display: grid;
+  grid-template-columns: 24 px 150px 182px; */
   font-size: 14px;
   line-height: 20px;
   color: #2D3440;
@@ -239,6 +413,10 @@ address b, .contacts-phone {
 
 .supply {
   font-weight: 700;
+}
+
+.credits {
+  width: 200px;
 }
 
 .credits-organization {
