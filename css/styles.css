@@ -2,7 +2,7 @@
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/inter-400.woff2") format("woff2");
+  src: url("../fonts/inter-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: Inter;
   font-style: bold;
   font-weight: 700;
-  src: url("fonts/inter-700.woff2") format("woff2");
+  src: url("../fonts/inter-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -18,7 +18,7 @@
   font-family: Inter;
   font-style: bold;
   font-weight: 900;
-  src: url("fonts/inter-900.woff2") format("woff2");
+  src: url("../fonts/inter-900.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -34,7 +34,6 @@ body {
   color: #565C66;
   font-family: Inter, sans-serif;
   font-weight: 400;
-  line-height: 22px;
   font-size: 16px;
   line-height: 22px;
   background-color: #FEAFC3;
@@ -48,12 +47,22 @@ body {
   margin: 0 auto;
 }
 
-a {
-  text-decoration: none;
-  color: #2D3440;
+/* вот тут вопросики. в стайлгайде указано, что для мониторов >=1170 марджин должен быть 98. я сначала 
+так и сделала.
+но! тогда ж вся сетка поедет нафиг, если монитор действительно будет шире. или нужно прописывать
+динамичные размеры ВСЕГО, чтобы адаптировалось под размеры колонок. а я по лайвам решила, что 
+можно просто снять размеры с макета и сверстать жёстко. нужно всё переписывать?.. */
+
+
+.main-container a {
+text-decoration: none;
+color: #2D3440;
 }
 
-h2 {
+/* я запомнила, что inherit лучше, но слёту не получается добиться нужного результата. если останется время после 
+самых важных штук, пересмотрю. пока установлю конкретный цвет */
+
+.heading-2 {
   color: #2D3440;
   font-weight: 900;
   font-size: 32px;
@@ -61,14 +70,12 @@ h2 {
   text-align: center;
 }
 
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .visually-hidden {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 /* навигация */
@@ -80,6 +87,15 @@ ul, ol {
   display: flex;
   align-items: center;
   line-height: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #2D3440;
+}
+
+.navigation ul {
+  list-style: none;
 }
 
 .navigation-left {
@@ -194,6 +210,7 @@ ul, ol {
 .popular-list {
   display: flex;
   justify-content: space-between;
+  list-style: none;
 }
 
 .popular-list-item {
@@ -202,7 +219,7 @@ ul, ol {
 }
 
 .popular-list-item-img {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .popular-list-item-title {
@@ -219,7 +236,7 @@ ul, ol {
 
 .popular-list-price {
   color: #2D3440;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
 }
@@ -228,7 +245,7 @@ ul, ol {
 
 .advantages {
   width: 1170px;
-  background-image: url("/img/advantages-background.jpg");
+  background-image: url("../img/advantages-background.jpg");
   background-repeat: no-repeat;
   border-radius: 16px;
 }
@@ -248,9 +265,10 @@ ul, ol {
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
 }
-/* мне не нравится врап, потому что если добавить ещё один элемент внутрь, он окажется слева, хотя логичнее, чтобы он 
-помещался по центру. хз, подумаю ещё */
+/* меня смущает врап, потому что если добавить ещё один элемент внутрь, он окажется слева, хотя логичнее, чтобы он 
+помещался по центру. вроде это решается с помощью выравнивания.. */
 
 .advantages-list-item {
   width: 510px;
@@ -266,7 +284,7 @@ ul, ol {
 .blog {
   width: 570px;
   background-color: #FCFCFC;
-  background-image: url("/img/blog.jpg");
+  background-image: url("../img/blog.jpg");
   background-repeat: no-repeat;
   border-radius: 16px;
 }
@@ -289,7 +307,7 @@ ul, ol {
 
 .newsletter {
   width: 570px;
-  background-image: url("/img/newsletter-background-postal.png");
+  background-image: url("../img/newsletter-background-postal.png");
   background-repeat: no-repeat;
   border-radius: 16px;
 }
@@ -321,7 +339,7 @@ ul, ol {
 
 .delivery {
   background-color: #FCFCFC;
-  background-image: url("/img/delivery.jpg");
+  background-image: url("../img/delivery.jpg");
   background-repeat: no-repeat;
   border-radius: 16px;
 }
@@ -343,7 +361,7 @@ ul, ol {
 .delivery-form {
   width: 500px;
   background-color: #FCFCFC;
-  box-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
+  box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
 }
 
@@ -351,7 +369,7 @@ ul, ol {
 
 .contacts {
   background-color: #FCFCFC;
-  background-image: url("/img/contacts.jpg");
+  background-image: url("../img/contacts.jpg");
   background-repeat: no-repeat;
   border-radius: 16px;
 }
@@ -360,15 +378,15 @@ ul, ol {
   width: 343px;
   margin-left: 64px;
   background-color: #FCFCFC;
-  box-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
 }
 
-.contacts-adress {
+.contacts-address {
   font-style: normal;
 }
 
-.contacts-adress b, .contacts-phone {
+.contacts-address b, .contacts-phone {
   color: #2D3440;
   font-weight: 700;
   font-size: 20px;
@@ -397,19 +415,37 @@ ul, ol {
   justify-content: space-between;
 }
 
+.footer-container a {
+  text-decoration: none;
+  color: inherit;
+  }
+
+.footer-container ul {
+  list-style: none;
+}
+
 .footer-socials {
   width: 104px;
   display: flex;
 }
 
 .footer-menu {
-  width: 360px;
-  /* display: grid;
-  grid-template-columns: 24 px 150px 182px; */
+  /* flex-grow: 1; */
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(120px, 180px)); */
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  justify-content: center;
   font-size: 14px;
   line-height: 20px;
   color: #2D3440;
 }
+
+/* если представить, что дальше добавится ещё несколько элементов в меню, то скорее всего, должна будет
+добавиться третья колонка, и по ширине они должны будут умещаться так, насколько позволит грид-контейнер
+меню. то есть, мне кажется логичным растянуть грид-меню максимально, поэтому и свойство флекс-гроу. 
+но если элементов мало, то оно становится неуправляемым. не понимаю, как сделать так, чтобы весь грид
+продолжал находиться в центре контейнера меню. здесь мозг уже вскипел */
 
 .supply {
   font-weight: 700;
@@ -429,14 +465,19 @@ ul, ol {
   text-decoration: underline;
 }
 
-/* /* каталог */ 
+/* каталог */ 
+
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  text-decoration: underline;
+}
 
 .breadcrumbs-item {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #2D3440;
-  text-decoration: underline;
 }
 
 .breadcrumbs-item.current {
@@ -452,8 +493,23 @@ ul, ol {
   color: #2D3440;
 }
 
+.filter-set {
+  width: 807px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-group .price {
+  width: 100px;
+}
+
+.filter-group-list {
+  display: flex;
+  list-style: none;
+}
+
 .filter-button {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #2D3440;
@@ -468,8 +524,17 @@ ul, ol {
   color: #2D3440;
 }
 
+.catalogue-products-list { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 270px);
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .catalogue-products-list-card-img {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   width: 168px;
   height: 168px; 
 }
@@ -497,7 +562,7 @@ ul, ol {
 }
 
 .catalogue-pagination-more {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
