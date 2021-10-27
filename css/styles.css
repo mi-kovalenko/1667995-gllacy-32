@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: Inter;
-  font-style: bold;
+  font-style: normal;
   font-weight: 700;
   src: url("../fonts/inter-700.woff2") format("woff2");
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: Inter;
-  font-style: bold;
+  font-style: normal;
   font-weight: 900;
   src: url("../fonts/inter-900.woff2") format("woff2");
   font-display: swap;
@@ -49,8 +49,9 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  min-width: 1366px;
   min-height: 100%;
-  color: #565C66;
+  color: #2D3440;
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -66,23 +67,12 @@ body {
   margin: 0 auto;
 }
 
-/* вот тут вопросики. в стайлгайде указано, что для мониторов >=1170 марджин должен быть 98. я сначала 
-так и сделала.
-но! тогда ж вся сетка поедет нафиг, если монитор действительно будет шире. или нужно прописывать
-динамичные размеры ВСЕГО, чтобы адаптировалось под размеры колонок. а я по лайвам решила, что 
-можно просто снять размеры с макета и сверстать жёстко. нужно всё переписывать?.. */
-
-
 .main-container a {
 text-decoration: none;
-color: #2D3440;
+color: inherit;
 }
 
-/* я запомнила, что inherit лучше, но слёту не получается добиться нужного результата. если останется время после 
-самых важных штук, пересмотрю. пока установлю конкретный цвет */
-
 .heading-2 {
-  color: #2D3440;
   font-weight: 900;
   font-size: 32px;
   line-height: 46px;
@@ -140,9 +130,6 @@ color: #2D3440;
 
 /* слайдер */
 
-.slider {
-  color: #2D3440;
-}
 
 .slideshow-item {
   display: flex;
@@ -180,10 +167,6 @@ color: #2D3440;
 
 /* промо */
 
-.promo {
-  color: #2D3440;
-}
-
 .promo-header {
   width: 443px;
   margin: auto;
@@ -206,8 +189,6 @@ color: #2D3440;
   line-height: 30px;
 }
 
-
-
 /* популярное */
 
 .popular-header {
@@ -216,8 +197,10 @@ color: #2D3440;
 }
 
 .popular-list {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 0;
   list-style: none;
 }
 
@@ -243,7 +226,6 @@ color: #2D3440;
 }
 
 .popular-list-price {
-  color: #2D3440;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -273,10 +255,9 @@ color: #2D3440;
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
+  color: #565C66;
   list-style: none;
 }
-/* меня смущает врап, потому что если добавить ещё один элемент внутрь, он окажется слева, хотя логичнее, чтобы он 
-помещался по центру. вроде это решается с помощью выравнивания.. */
 
 .advantages-list-item {
   width: 510px;
@@ -315,6 +296,7 @@ color: #2D3440;
 
 .newsletter {
   width: 570px;
+  color: #565C66;
   background-image: url("../img/newsletter-background-postal.png");
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -325,15 +307,6 @@ color: #2D3440;
   margin: 6px;
   background: #FCFCFC;
   border-radius: 16px;
-}
-
-
-
-.delivery-label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  color: #2D3440;
 }
 
 /* доставка */
@@ -355,8 +328,16 @@ color: #2D3440;
   text-align: left;
 }
 
+.delivery-description {
+  color: #565C66;
+}
+
 .delivery-header {
   text-align: left;
+}
+
+.delivery-legend {
+  color: #565C66;
 }
 
 .delivery-form {
@@ -364,6 +345,12 @@ color: #2D3440;
   background-color: #FCFCFC;
   box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
+}
+
+.delivery-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* контакты */
@@ -387,8 +374,11 @@ color: #2D3440;
   font-style: normal;
 }
 
-.contacts-address b, .contacts-phone {
-  color: #2D3440;
+.contacts-address p {
+  color: #565C66;
+}
+
+.contacts-address b, .contacts-phone { 
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -431,22 +421,13 @@ color: #2D3440;
 }
 
 .footer-menu {
-  /* flex-grow: 1; */
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(120px, 180px)); */
   grid-template-columns: 1fr 1fr;
   align-content: center;
   justify-content: center;
   font-size: 14px;
   line-height: 20px;
-  color: #2D3440;
 }
-
-/* если представить, что дальше добавится ещё несколько элементов в меню, то скорее всего, должна будет
-добавиться третья колонка, и по ширине они должны будут умещаться так, насколько позволит грид-контейнер
-меню. то есть, мне кажется логичным растянуть грид-меню максимально, поэтому и свойство флекс-гроу. 
-но если элементов мало, то оно становится неуправляемым. не понимаю, как сделать так, чтобы весь грид
-продолжал находиться в центре контейнера меню. здесь мозг уже вскипел */
 
 .supply {
   font-weight: 700;
@@ -459,7 +440,6 @@ color: #2D3440;
 .credits-organization {
   font-size: 12px;
   line-height: 16px;
-  color: #2D3440;
 }
 
 .credits-organization a {
@@ -478,7 +458,6 @@ color: #2D3440;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
-  color: #2D3440;
 }
 
 .breadcrumbs-item.current {
@@ -491,7 +470,6 @@ color: #2D3440;
   font-weight: 400;
   font-size: 14px; 
   line-height: 20px;
-  color: #2D3440;
 }
 
 .filter-set {
@@ -517,7 +495,6 @@ color: #2D3440;
   font-weight: 900;
   font-size: 32px;
   line-height: 46px;
-  color: #2D3440;
 }
 
 .catalogue-products-list { 
@@ -540,7 +517,6 @@ color: #2D3440;
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-  color: #2D3440;
 }
 
 .catalogue-products-list-card-description {
@@ -554,7 +530,6 @@ color: #2D3440;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #2D3440;
 }
 
 .catalogue-pagination-more {
@@ -562,7 +537,6 @@ color: #2D3440;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  color: #2D3440;
 }
 
 /* кнопки */
@@ -593,5 +567,4 @@ color: #2D3440;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
-  color: #2D3440;
 }
