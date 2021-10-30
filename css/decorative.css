@@ -1,0 +1,188 @@
+:root {
+  --basic-extra-dark: #2D3440;
+  --basic-dark: #565C66;
+  --basic-neutral: #B9B9B9;
+  --basic-light: #E7E7E7;
+  --basic-extra-light: #FCFCFC;
+  --basic-white: #FFFFFF;
+  --special-extra-bright: #FF2F64;
+  --special-bright: #FF4A78;
+  --special-neutral: #FF7799;
+  --special-light: #FEAFC3;
+  --special-exta-light: #FFCBD8;
+  --special-blue: #69A9FF;
+  --special-yellow: #FCC850;
+  --status-error: #EA5454;
+  --status-warning: #FD912E;
+  --status-success: #00E484;
+}
+
+.btn-main {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding: 12px 32px;
+  background: var(--basic-extra-light);
+  border: 4px solid rgba(252, 252, 252, 0.4);
+  /* не понимаю, как тут работает альфа-канал. в макете дают rgba, но в браузере он отображается по-другому.
+  переменная из палитры выглядит как надо. такое ощущение, что через рамку просвечивает окрашенный паддинг, 
+  но такого же не должно быть. */
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  border-radius: 26px;
+  box-sizing: border-box;
+}
+
+.btn-main:hover {
+  background: rgba(252, 252, 252, 0.4);
+  border: 4px solid rgba(252, 252, 252, 0.4);
+  box-shadow: 0px 4px 15px rgba(133, 133, 133, 0.15);
+}
+
+.btn-main:focus {
+  background: var(--basic-extra-light);
+  border: 2px solid var(--basic-extra-dark);
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+}
+
+.btn-main:disabled {
+  color: var(--basic-neutral);
+  background: var(--basic-light);
+  border: 4px solid rgba(252, 252, 252, 0.4);
+}
+
+/* .btn-main:spinner */
+
+.btn-extra {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding: 12px 32px;
+  color: var(--basic-extra-light);
+  background: var(--special-extra-bright);
+  border: 4px solid rgba(255, 47, 100, 0.3); 
+  /* border: 4px solid var(--special-exta-light); */
+  /* такая же ерунда с альфа-каналом. вот это похоже на макет */
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  border-radius: 26px;
+  box-sizing: border-box;
+}
+
+.btn-extra:hover {
+  color: var(--basic-extra-dark);
+  background: rgba(252, 252, 252, 0.3);
+  border: 4px solid var(--special-extra-bright);
+}
+
+.btn-extra:focus {
+  color: var(--basic-extra-light);
+  background: var(--special-extra-bright);
+  border: 2px solid var(--basic-extra-dark);
+  box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+}
+
+.btn-extra:disabled {
+  color: var(--basic-dark);
+  background: var(--basic-neutral);
+  border: 4px solid rgba(185, 185, 185, 0.3); 
+}
+
+.filter-button {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 32px;
+  background: rgba(252, 252, 252, 0.3);
+  border: 2px solid var(--basic-extra-light);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.filter-button:hover {
+  background: var(--basic-extra-light);
+  border: 2px solid rgba(252, 252, 252, 0.3);
+  /* border: 2px solid var(--special-exta-light); */
+}
+
+.filter-button:focus {
+  background: rgba(252, 252, 252, 0.3);
+  border: 2px solid var(--basic-extra-dark);
+}
+
+.filter-button:disabled {
+  opacity: 0.4;
+  /* но кнопка с прозрачностью будет  кликабельна, почему, фигма */
+  background: rgba(252, 252, 252, 0.3);
+  border: 2px solid var(--basic-extra-light);
+}
+
+/* меню правое */
+
+.navigation-right-link {
+  padding: 7px 16px;
+  background: rgba(252, 252, 252, 0.3);
+  border-radius: 26px;
+  box-sizing: border-box;
+    /* тоже не работает бордер бокс */
+}
+
+.navigation-right-link:hover {
+  background: rgba(252, 252, 252, 0.5);
+}
+
+.navigation-right-link:focus {
+  border: 2px solid var(--basic-extra-dark);
+}
+
+.navigation-right-link:active {
+  background: var(--basic-extra-light);
+  border: none;
+}
+
+/* меню левое */
+
+.navigation-left-link {
+  padding: 8px 16px;
+  border-radius: 26px;
+  box-sizing: border-box;
+}
+
+.navigation-left-link:hover {
+  background: rgba(252, 252, 252, 0.5);
+}
+
+.navigation-left-link:focus {
+  background: rgba(252, 252, 252, 0.5);
+  border: 2px solid var(--basic-extra-dark);
+}
+
+.navigation-left-link:active {
+  background: var(--basic-extra-light);
+  border: none;
+}
+
+.navigation-left-link.current {
+  color: var(--basic-extra-light);
+  background: var(--special-extra-bright);
+  border: none;
+}
+
+/* соцсети */
+
+.vk-icon {
+  content: url("../img/VK.svg");
+  fill: var(--basic-extra-light);
+}
+.fb-icon {
+  content: url("../img/Фейсбук.svg");
+  fill: var(--basic-extra-light);
+}
+
+.insta-icon {
+  content: url("../img/Instagram.svg");
+  fill: var(--basic-extra-light);
+}
