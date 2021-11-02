@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/decorative.css"> -->
   </head>
   <body>
     <header>
@@ -24,23 +25,23 @@
         </ul>
         <ul class="navigation-right">
           <li class="navigation-right-item">
-            <a class="navigation-right-phone" href="tel:88005558628">+7 800 555-86-28</a>
+            <a class="navigation-right-phone" href="tel:+78005558628">+7 800 555-86-28</a>
           </li>
           <li class="navigation-right-item">
-            <a class="navigation-right-link" href="#">
-              <span class="visually-hidden">Поиск.</span>
+            <a class="navigation-right-link search" href="#">
+              <img src="img/Search.svg" width="18" height="18" alt="Поиск">
             </a>
           </li>
           <li class="navigation-right-item">
-            <a class="navigation-right-link" href="#">
-              <span class="visually-hidden">Личный кабинет.</span>
+            <a class="navigation-right-link log-in" href="#">
+              <img src="img/Log-in.svg" width="18" height="18" alt="Личный кабинет">
               <span>Вход</span>
             </a>
           </li>
           <li class="navigation-right-item">
             <a class="navigation-right-link" href="#">
-              <span class="visually-hidden">Корзина.</span>
-              <span>2 товара</span>
+              <img class="cart" src="img/Cart.svg" width="18" height="18" alt="Корзина">
+              <span>Пусто</span>
             </a>
           </li>
         </ul>
@@ -52,13 +53,7 @@
           <a class="breadcrumbs-item-link" href="#">Главная</a>
         </li>
         <li class="breadcrumbs-item">
-          <img class="breadcrumbs-icon" src="img/chevrons-right.svg" alt="">
-        </li>
-        <li class="breadcrumbs-item">
           <a class="breadcrumbs-item-link" href="#">Каталог</a>
-        </li>
-        <li class="breadcrumbs-item">
-          <img class="breadcrumbs-icon" src="img/chevrons-right.svg" alt="">
         </li>
         <li class="breadcrumbs-item current">
           <a class="breadcrumbs-item-link" href="#">Сливочное</a>
@@ -330,7 +325,7 @@
         <div class="catalogue-pagination">
           <button class="catalogue-pagination-more btn-main" type="button">Показать ещё</button>
           <ul class="catalogue-pagination-pages">
-            <li class="catalogue-pagination-pages-button prev">
+            <li class="catalogue-pagination-pages-button prev" disabled>
               <a class="catalogue-pagination-pages-button-link catalogue-pagination-disabled " href="#">
                 <span class="visually-hidden">Предыдущая страница</span>
               </a>

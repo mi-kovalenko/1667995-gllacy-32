@@ -108,28 +108,39 @@ color: inherit;
 }
 
 .navigation-left {
+  margin: 0;
   margin-left: 16px;
+  padding: 0;
   display: flex;
-}
-
-.navigation-left-item {
-  padding: 8px 16px;
 }
 
 .navigation-right {
-  max-width: 419px;
   display: flex;
+  align-content: center;
+  margin: 0;
   margin-left: auto;
+  padding: 0;
   font-size: 14px;
 }
 
 .navigation-right-item {
+  align-self: center;
   margin-left: 18px;
+}
+
+.navigation-right-link {
+display: flex;
+align-content: center;
 }
 
 .navigation-right-phone {
   font-size: 16px;
   font-weight: 700;
+}
+
+.navigation-right img {
+  display: inline-block;
+  margin-right: 6px;
 }
 
 /* слайдер */
@@ -298,7 +309,8 @@ color: inherit;
 .product-purchase {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px 28px 40px;
+  align-items: center;
+  padding: 0 40px 24px 40px;
 }
 
 .products-list-card-price {
@@ -320,7 +332,7 @@ color: inherit;
 }
 
 .advantages-card {
-  padding: 56px 40px;
+  padding: 56px 40px 16px 40px;
   background-color: #FCFCFC;
   border-radius: 16px;
 }
@@ -333,7 +345,6 @@ color: inherit;
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px 30px;
   padding: 0;
   margin: 0;
   margin-top: 56px;
@@ -346,7 +357,12 @@ color: inherit;
   display: flex;
   align-content: center;
   box-sizing: border-box;
+  margin-bottom: 40px;
 }
+
+.advantages-list-item:nth-child(odd) {   
+  margin-right: 30px;
+  }
 
 .advantages-list-item img {
   align-self: center;
@@ -511,10 +527,15 @@ color: inherit;
 }
 
 input::placeholder {
-  padding: 14px 16px;
+  overflow: visible;
+  padding: 0;
   font-size: 16px;
-  line-height: 20px;
+  line-height: normal;
   color: var(--basic-neutral);
+}
+
+input::-webkit-input-placeholder {
+  
 }
 
 
