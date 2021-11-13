@@ -56,7 +56,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  background-color: var(--special-yellow);
+  background-color: var(--special-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,8 +68,8 @@ body {
 }
 
 .main-container a {
-text-decoration: none;
-color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .heading-2 {
@@ -92,6 +92,7 @@ color: inherit;
 .navigation {
   width: 1170px;
   margin: auto;
+  margin-bottom: 24px;
   padding: 24px 0;
   display: flex;
   align-items: center;
@@ -186,7 +187,7 @@ color: inherit;
   width: 32px;
   height: 32px;
   padding: 7px;
-  background-image: url("../img/Search.svg");
+  background-image: url("../img/search.svg");
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: center;
@@ -194,33 +195,86 @@ color: inherit;
 
 .navigation-right-link.log-in {
   padding-left: 40px;
-  background-image: url("../img/Log-in.svg");
+  background-image: url("../img/log-in.svg");
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: center left 16px;
 }
 
 .navigation-right-link.cart {
-  display: flex;
-  align-items: center;
+  padding-left: 40px;
+  background-image: url("../img/cart.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center left 16px;
+}
+
+.navigation-right-link.cart-full {
+  padding-left: 40px;
+  background-image: url("../img/cart-full.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center left 16px;
 }
 
 .navigation-right-link-cart-icon {
   margin-right: 6px;
 }
 
+/* ----слайдшоу---- */
 
-/* ----слайдер---- */
-
-.slider {
+.slideshow {
   margin-bottom: 80px;
+  position: relative;
 }
-.slideshow-item {
+
+.slideshow-items {
   display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-left: 70px;
+  list-style-type: none;
+}
+
+.slideshow-item {
+  flex: none;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.slideshow-item:last-child {
+  margin-right: 0;
 }
 
 .slideshow-item-description {
+  display: none;
+}
+
+.slideshow-item-img {
+  flex: none;
+  z-index: 2;
+  width: 100px;
+  opacity: 0.4;
+}
+
+.slideshow-item-img img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.slideshow-item.active {
+  order: -1;
+  flex-grow: 1;
+}
+
+.slideshow-item.active .slideshow-item-description {
+  display: block;
   width: 470px;
+  margin-right: 20px;
 }
 
 .slideshow-item-description h3 {
@@ -234,19 +288,22 @@ color: inherit;
   font-size: 18px;
   line-height: 24px;
 }
-
-.slideshow-item-img {
-  margin-left: auto;
-  width: 630px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 41px;
+ 
+.slideshow-item.active .slideshow-item-img {
+  width: 312px;
+  opacity: 1;
 }
 
-.slideshow-item-img-current {
+/* кнопки слайдшоу */
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  right: 280px;
+  transform: translateY(-50%);
+  width: 350px;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .slideshow-item-arrow {
@@ -262,6 +319,7 @@ color: inherit;
   border: 2px solid #FCFCFC;
   box-sizing: border-box;
   border-radius: 26px;
+  cursor: pointer;
 }
 
 .slideshow-item-arrow path {
@@ -289,16 +347,19 @@ color: inherit;
   background: rgba(252, 252, 252, 0.3);
   opacity: 0.4;
   border: 2px solid var(--basic-extra-light);
+  cursor: auto;
 }
 
 .slideshow-item-arrow:disabled:hover path {
   fill: var(--basic-extra-light);
 }
 
-.slider-bottom-container {
+.slideshow-bottom-container {
   display: flex;
   justify-content: space-between;
 }
+
+/* пагинация слайдшоу */
 
 .slideshow-pagination {
   display: flex;
@@ -308,14 +369,18 @@ color: inherit;
   width: 12px;
   height: 12px;
   margin-right: 8px;
-  background: var(--basic-extra-light);
   border-radius: 100px;
+  background: rgba(252, 252, 252, 0.3);
   box-sizing: border-box;
-  border: 1px solid #FCFCFC;
+}
+
+.slideshow-pagination-link.current {
+  background: var(--basic-extra-light);
 }
 
 .slideshow-pagination-link:hover {
   background: rgba(252, 252, 252, 0.3);
+  border: 1px solid #FCFCFC;
 }
 
 .slideshow-pagination-link:focus {
@@ -332,40 +397,29 @@ color: inherit;
   padding: 0;
 }
 
-/* мне почему-то казалось, что ты советовала добавить иконки соцсетей в цсс. в лайве говорили, что
- стоит в разметку. halp */
  .socials-link-icon {
   display: inline-block;
-  width: 28px; 
-  height: 28px; 
   margin-left: 12px;
-  box-sizing: border-box;
-  -webkit-mask-size: cover;
-  background-color: var(--basic-extra-light);
+ }
+
+ .socials-link-icon svg {
   background-clip: padding-box;
+  fill: var(--basic-extra-light);
   border: 2px solid rgba(252, 252, 252, 0.2);
   border-radius: 100px;
+  /* я эээ вообще выпилила атрибут fill отовсюдe в разметке, с currentColor почему-то не получается */
+} 
+
+.socials-link-icon:hover svg {
+  border: 2px solid rgba(252, 252, 252, 0.2);
+  background-color: var(--basic-extra-dark);
 }
 
-.vk-icon {
-  -webkit-mask-image: url("../img/VK.svg");
-}
-.fb-icon {
-  -webkit-mask-image: url("../img/facebook.svg");
-}
-
-.insta-icon {
-  -webkit-mask-image: url("../img/Instagram.svg");
-}
-
-.socials-link-icon:hover {
-background-color: var(--basic-extra-dark);
-}
-
-.socials-link-icon:focus {
+.socials-link-icon:focus svg {
   background-color: var(--basic-extra-dark);
   border: 2px solid var(--basic-extra-dark);
 }
+/* как избавиться от артефакта? */
 
 /* ----промо---- */
 
@@ -387,27 +441,24 @@ background-color: var(--basic-extra-dark);
 
 .promo-item {
   max-width: 570px;
-  height: 268px;
-  /* меня почему-то смущает, что нужно задавать высоту, но вроде работает */
-  display: grid;
-  grid-template-columns: 1fr auto;
-  padding: 28px 15px 0 40px;
+  padding: 28px 15px 40px 40px;
   background-color: #FF7799;
   background-position: bottom right;
   background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 16px;
   box-sizing: border-box;
 }
 
 .promo-item.raspberry {
   background-image: url("../img/promo-raspberry.png");
-  background-size: 181px 240px;
+  background-size: 181px auto;
   background-position: right 15px bottom;
 }
 
 .promo-item.marshmallow {
   background-image: url("../img/promo-marshmallow.png");
-  background-size: 232px 249px;
+  background-size: 232px auto;
   background-position: right 7px bottom;
 }
 
@@ -431,7 +482,6 @@ background-color: var(--basic-extra-dark);
   padding-bottom: 32px;
 }
 
-
 .promo-img {
   align-self: flex-end;
 }
@@ -446,6 +496,8 @@ background-color: var(--basic-extra-dark);
   width: 527px;
   margin: auto;
 }
+
+/* ----карточки товаров--- */
 
 .products-list {
   display: grid;
@@ -503,7 +555,7 @@ background-color: var(--basic-extra-dark);
   line-height: 24px;
 }
 
-/* ----плюсы---- */
+/* ----преимущества---- */
 
 .advantages {
   width: 1170px;
@@ -587,7 +639,7 @@ background-color: var(--basic-extra-dark);
   background-color: #FCFCFC;
   background-image: url("../img/blog.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-radius: 16px;
   box-sizing: border-box;
 }
@@ -613,16 +665,17 @@ background-color: var(--basic-extra-dark);
 
 .newsletter {
   width: 570px;
+  padding: 6px;
   color: #565C66;
   background-image: url("../img/newsletter-background-postal.png");
   background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .newsletter-card {
-  width: 558px;
   padding: 26px;
-  margin: 6px;
   background: #FCFCFC;
   border-radius: 16px;
   box-sizing: border-box;
@@ -638,11 +691,9 @@ background-color: var(--basic-extra-dark);
 }
 
 .newsletter-form .field {
-  width: 332px;
-  height: 48px;
-  border: 1px solid var(--basic-neutral);
-  border-radius: 4px;
-  }
+  width: 316px;
+  align-self: center;
+}
 
 /* ----доставка---- */
 
@@ -690,7 +741,7 @@ background-color: var(--basic-extra-dark);
   gap: 0 16px;
 }
 
-.delivery-form .field {
+.delivery-info {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -702,22 +753,31 @@ background-color: var(--basic-extra-dark);
   color: #565C66;
 }
 
-.delivery-label {
-  display: flex;
-  align-items: center;
+.delivery-form-label {
+  position: relative;
+  padding-right: 16px;
   margin-bottom: 8px;
+}
+
+.delivery-label {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
 }
 
-.delivery-info-icon {
-  background-image: url("../img/Info.svg");
+.tooltip-icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: 3px;
+  margin-left: 4px;  
   border: none;
-  background-color: var(--basic-extra-light);
-  padding: 8px;
-  margin-left: 4px;
-}
+  background-image: url("../img/info-label.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+} 
 
 .delivery-submit {
   margin: 0 auto;
@@ -725,23 +785,51 @@ background-color: var(--basic-extra-dark);
   justify-self: center;
 }
 
-.delivery-address.field {
+.delivery-address {
   grid-column: 1/-1;
 }
 
-.delivery-form input {
+.field {
   height: 48px;
-  border: 1px solid var(--basic-neutral);
+  padding: 0;
+  padding-left: 16px;
+  color: var(--basic-extra-dark);
+  font-size: 16px;
+  line-height: normal;
+  border: none;
+  box-shadow: inset 0 0 0 1px var(--basic-neutral);
   border-radius: 4px;
 }
 
-input::placeholder {
-  overflow: visible;
-  padding: 0;
-  padding-left: 16px;
-  font-size: 16px;
-  line-height: normal;
+.field::placeholder {
   color: var(--basic-neutral);
+}
+
+.field:hover {
+  box-shadow: inset 0 0 0 1px var(--basic-extra-dark);
+}
+
+.field:focus {
+  box-shadow: inset 0 0 0 2px var(--basic-extra-dark);
+  outline: none;
+}
+
+/* .field:invalid {
+  box-shadow: inset 0 0 0 1px var(--status-error);
+} */
+/* если просто .field:invalid, то рамка окрашена постоянно. наверное, так не должно быть? */
+
+.field:focus:invalid {
+  box-shadow: inset 0 0 0 1px var(--status-error);
+}
+
+.field:hover:invalid {
+  box-shadow: inset 0 0 0 2px var(--status-error);
+}
+
+.field:disabled, .field:disabled:hover {
+  background-color: var(--basic-light);
+  box-shadow: inset 0 0 0 1px var(--basic-neutral);
 }
 
 /* ----контакты---- */
@@ -849,7 +937,7 @@ input::placeholder {
   transform: translate(-24px, 2px);
   width: 16px;
   height: 16px;
-  background-image: url("../img/Heart-fill.svg");
+  background-image: url("../img/heart-fill.svg");
   background-repeat: no-repeat;
 }
 
@@ -868,6 +956,8 @@ input::placeholder {
 }
 
 /* ----каталог---- */ 
+
+/* хлебные крошки */
 
 .breadcrumbs {
   display: flex;
@@ -928,48 +1018,262 @@ input::placeholder {
 }
 
 .filter-group {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   border: none;
-}
-
-.filter-group.price {
-  width: 196px;
-}
-
-.price-range {
-  background-color: var(--special-exta-light);
-  border-radius: 20px;
-}
-
-.filter-group.sorting {
-  width: 196px;
-}
-
-.filter-group.fat {
-  width: 367px;
-}
-
-.filter-group.filling {
-  width: 596px;
+  margin-bottom: 16px;
 }
 
 .filter-group-list {
   display: flex;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 10px 0 10px 16px;
   margin: 0;
   list-style: none;
   background-color: var(--special-exta-light);
   border-radius: 20px;
 }
 
-.sorting-type {
+.filter-group-name {
+  padding: 0px;
+  margin: 0px;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.filter-button {
+  align-self: center;
+}
+
+.select-sorting {
   padding: 8px 16px;
+  width: 196px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: inherit;
+  border: none;
+  border-radius: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(252, 252, 252, 0.3);
+  background-image: url("../img/arrow-down.svg");
+  background-position: center right 13px;
+  background-repeat: no-repeat;
+}
+
+.select-sorting:hover {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.select-sorting:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--basic-extra-light);
+  box-sizing: border-box;
+}
+
+/* слайдер в фильтрах */
+
+.filter-group.price {
+  width: 196px;
+}
+
+.price-range-wrapper {
+  padding: 17px 16px;
   background-color: var(--special-exta-light);
   border: none;
   border-radius: 20px;
 }
+
+.price-range-scale {
+  position: relative;
+  height: 2px;
+  margin: auto;
+  border-radius: 2px;
+  background-color:rgba(86, 92, 102, 0.3);
+}
+
+.price-range-bar {
+  position: absolute;
+  height: 2px;
+  background-color: var(--basic-dark);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--basic-extra-dark);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-toggle-inside {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--basic-extra-light);
+  border-radius: 50%;
+  border: none;
+}
+
+.range-toggle:hover {
+  background-color: var(--basic-extra-light);
+}
+
+.range-toggle:hover .range-toggle-inside {
+  background-color: var(--basic-extra-dark);
+}
+
+.range-toggle:focus {
+  box-shadow: inset 0 0 0 2px var(--basic-extra-dark);
+}
+
+.range-toggle:active, .range-toggle:active .range-toggle-inside {
+  background-color: var(--basic-extra-dark);
+}
+
+.toggle-min {
+  top: -7px;
+  left: -8px;
+}
+
+.toggle-max {
+  top: -7px;
+  right: -8px;
+}
+
+.price-range-input-wrapper {
+  display: flex;
+}
+
+.catalog-filter-label {
+  display: flex;
+}
+
+.range-input {
+  width: 30px;
+  text-align: center;
+  padding: 0 0 0 2px;
+  margin-bottom: 8px;
+  color: inherit;
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  appearance: textfield;
+}
+
+.range-input::-webkit-inner-spin-button,
+.range-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* радио-кнопки жыр */
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 24px;
+  padding-right: 16px;
+}
+
+.control-mark-radio {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--basic-extra-dark);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* состояния */
+
+.control:hover .control-mark-radio {
+  border: 1px solid var(--basic-extra-light);
+}
+
+.control-input[type="radio"]:disabled + .control-mark-radio {
+  border: 1px solid var(--basic-extra-dark);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.control-input[type="radio"]:disabled ~ .control-label {
+  opacity: 0.4;
+}
+
+.control-input[type="radio"]:checked + .control-mark-radio::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--basic-extra-dark);
+  border-radius: 50%;
+  content: "";
+}
+
+.control:hover .control-input[type="radio"]:checked + .control-mark-radio::before {
+  background-color: var(--basic-extra-light);
+}
+
+.control:hover .control-input[type=radio]:disabled:checked + .control-mark-radio::before {
+  background-color: var(--basic-extra-dark);
+}
+
+/* чекбоксы */
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: 16px;
+  color: inherit;
+}
+
+.control-mark-checkbox {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.control-mark-checkbox .checked {
+  opacity: 0;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark-checkbox .checked {
+  opacity: 1;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark-checkbox .unchecked {
+  opacity: 0;
+}
+
+.checkbox:hover .control-mark-checkbox {
+  color: var(--basic-extra-light);
+}
+
+.control-input[type="checkbox"]:disabled + .control-mark-checkbox {
+  opacity: 0.4;
+}
+
+.control-input[type="checkbox"]:disabled ~ .control-label {
+  opacity: 0.4;
+}
+
+.checkbox:hover .control-input[type="checkbox"]:disabled + .control-mark-checkbox {
+  color: var(--basic-extra-dark);
+  pointer-events: none;
+}
+
 
 
 
@@ -991,6 +1295,7 @@ input::placeholder {
   grid-column-start: 2; 
   justify-self: center;
 }
+/* эта кнопка выглядит по-разному в разных браузерах, почему так? */
 
 .catalogue-pagination-pages {
   display: flex;
@@ -1002,18 +1307,20 @@ input::placeholder {
 
 .catalogue-pagination-pages-button.prev {
   margin-right: 16px;
-  content: url(../img/Arrow-left.svg);
+  content: url("../img/arrow-left.svg");
+  cursor: pointer;
 }
 
 .catalogue-pagination-pages-button.next {
   margin-left: 16px;
-  content: url(../img/Arrow-right.svg);
+  content: url("../img/arrow-right.svg");
+  cursor: pointer;
 }
 
-.catalogue-pagination-pages-button-link:disabled {
+.catalogue-pagination-pages-button.disabled {
   opacity: 0.2;
+  pointer-events: none;
 } 
-/* непонятно, как сделать ссылку disabled */
 
 .catalogue-pagination-pages-item {
   width: 24px;
@@ -1042,9 +1349,6 @@ input::placeholder {
 
 /* ----кнопки---- */
 
-/* я хз, как сделать так, чтобы кнопка не ездила туда-сюда, когда на ней фокус, размер-то меняется(
-  основная кнопка на странице каталога нормальная, видимо, зависит от центровки.. */
-
 .btn-main {
   display: inline-block;
   box-sizing: border-box;
@@ -1058,6 +1362,7 @@ input::placeholder {
   border: 4px solid rgba(252, 252, 252, 0.4);
   box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
   border-radius: 26px;
+  cursor: pointer;
 }
 
 .btn-main:hover {
@@ -1067,6 +1372,7 @@ input::placeholder {
 }
 
 .btn-main:focus {
+  padding: 14px 34px;
   background: var(--basic-extra-light);
   border: 2px solid var(--basic-extra-dark);
   box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
@@ -1076,11 +1382,12 @@ input::placeholder {
   color: var(--basic-neutral);
   background: var(--basic-light);
   border: 4px solid rgba(252, 252, 252, 0.4);
-  cursor: pointer;
+  cursor: auto;
 }
 
 .btn-extra {
   display: inline-block;
+  box-sizing: border-box;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -1092,7 +1399,7 @@ input::placeholder {
   border: 4px solid rgba(255, 47, 100, 0.3); 
   box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
   border-radius: 26px;
-  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .btn-extra:hover {
@@ -1103,6 +1410,7 @@ input::placeholder {
 }
 
 .btn-extra:focus {
+  padding: 14px 34px;
   color: var(--basic-extra-light);
   background: var(--special-extra-bright);
   border: 2px solid var(--basic-extra-dark);
@@ -1114,16 +1422,17 @@ input::placeholder {
   background: var(--basic-neutral);
   border: 4px solid rgba(185, 185, 185, 0.3); 
   box-shadow: none;
-  cursor: pointer;
+  cursor: auto;
 }
 
 .filter-button {
   display: inline-block;
-  align-self: end;
+  align-self: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   padding: 8px 53px;
+  margin-top: 10px;
   background: rgba(252, 252, 252, 0.3);
   border: 2px solid var(--basic-extra-light);
   border-radius: 20px;
@@ -1145,7 +1454,7 @@ input::placeholder {
   opacity: 0.4;
   background: rgba(252, 252, 252, 0.3);
   border: 2px solid var(--basic-extra-light);
-  cursor: pointer;
+  cursor: auto;
 }
 
 .btn-cart {
@@ -1157,6 +1466,7 @@ input::placeholder {
   padding: 8px;
   background-color: var(--special-extra-bright);
   border-radius: 26px;
+  cursor: pointer;
 }
 
 .btn-cart-icon {
@@ -1170,7 +1480,6 @@ input::placeholder {
 
 .btn-cart-icon path {
   fill: var(--basic-extra-light);
-/* почему-то к самому svg не применяется fill, не понимаю, почему */
 }
 
 .btn-cart:hover {
@@ -1191,12 +1500,12 @@ input::placeholder {
   fill: var(--basic-extra-light);
 }
 
-.btn-cart:disabled {
+.btn-cart.disabled {
   background-color: var(--basic-neutral);
   border: 2px solid var(--basic-neutral);
+  pointer-events: none;
 }
 
-.btn-cart:disabled path {
+.btn-cart.disabled path {
   fill: var(--basic-dark);
 }
-/* опять хз, как отключить кнопку-ссылку */
