@@ -51,7 +51,7 @@ body {
   flex-direction: column;
   min-width: 1366px;
   min-height: 100%;
-  color: #2D3440;
+  color: var(--basic-extra-dark);
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -101,7 +101,7 @@ body {
 
 .navigation a {
   text-decoration: none;
-  color: #2D3440;
+  color: var(--basic-extra-dark);
 }
 
 .navigation ul {
@@ -296,7 +296,7 @@ body {
 
 /* кнопки слайдшоу */
 
-.slider-controls {
+.slideshow-controls {
   position: absolute;
   top: 50%;
   right: 280px;
@@ -316,7 +316,7 @@ body {
   background: rgba(252, 252, 252, 0.3);
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #FCFCFC;
+  border: 2px solid var(--basic-extra-light);
   box-sizing: border-box;
   border-radius: 26px;
   cursor: pointer;
@@ -336,7 +336,7 @@ body {
 
 .slideshow-item-arrow:focus {
   background: rgba(252, 252, 252, 0.3);
-  border: 2px solid #2D3440;
+  border: 2px solid var(--basic-extra-dark);
 }
 
 .slideshow-item-arrow:focus path {
@@ -380,12 +380,12 @@ body {
 
 .slideshow-pagination-link:hover {
   background: rgba(252, 252, 252, 0.3);
-  border: 1px solid #FCFCFC;
+  border: 1px solid var(--basic-extra-light);
 }
 
 .slideshow-pagination-link:focus {
   background: rgba(252, 252, 252, 0.3);
-  border: 1px solid #2D3440;
+  border: 1px solid var(--basic-extra-dark);
 }
 
 /* ----соцсети---- */
@@ -442,7 +442,7 @@ body {
 .promo-item {
   max-width: 570px;
   padding: 28px 15px 40px 40px;
-  background-color: #FF7799;
+  background-color: var(--special-neutral);
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -510,7 +510,7 @@ body {
 
 .products-list-card {
   width: 270px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   border-radius: 8px;
 }
 
@@ -539,7 +539,7 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
-  color: #565C66;
+  color: var(--basic-dark);
 }
 
 .product-purchase {
@@ -569,7 +569,7 @@ body {
 
 .advantages-card {
   padding: 56px 40px 16px 40px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   border-radius: 16px;
 }
 
@@ -584,7 +584,7 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 56px;
-  color: #565C66;
+  color: var(--basic-dark);
   list-style: none;
 }
 
@@ -636,7 +636,7 @@ body {
 .blog {
   min-width: 570px;
   padding: 32px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   background-image: url("../img/blog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -650,7 +650,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   text-align: left;
-  color: #565C66;
+  color: var(--basic-dark);
 }
 
 .blog p {
@@ -666,7 +666,8 @@ body {
 .newsletter {
   width: 570px;
   padding: 6px;
-  color: #565C66;
+  color: var(--basic-dark);
+  background-color: var(--basic-extra-light);
   background-image: url("../img/newsletter-background-postal.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -676,7 +677,7 @@ body {
 
 .newsletter-card {
   padding: 26px;
-  background: #FCFCFC;
+  background: var(--basic-extra-light);
   border-radius: 16px;
   box-sizing: border-box;
 }
@@ -699,7 +700,7 @@ body {
 
 .delivery {
   margin-bottom: 80px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   background-image: url("../img/delivery.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -720,7 +721,7 @@ body {
 }
 
 .delivery-description {
-  color: #565C66;
+  color: var(--basic-dark);
 }
 
 .delivery-header {
@@ -730,7 +731,7 @@ body {
 .delivery-form-card {
   margin: 0;
   padding: 40px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
 }
@@ -750,7 +751,7 @@ body {
 .delivery-legend {
   width: 380px;
   margin: 0;
-  color: #565C66;
+  color: var(--basic-dark);
 }
 
 .delivery-form-label {
@@ -836,7 +837,7 @@ body {
 
 .contacts {
   padding: 64px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   background-image: url("../img/contacts.jpg");
   background-size: 1170px 492px;
   background-repeat: no-repeat;
@@ -847,7 +848,7 @@ body {
   width: 260px;
   padding: 40px;
   padding-bottom: 37px;
-  background-color: #FCFCFC;
+  background-color: var(--basic-extra-light);
   box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
 }
@@ -858,7 +859,7 @@ body {
 }
 
 .contacts-address p {
-  color: #565C66;
+  color: var(--basic-dark);
   margin: 0;
   margin-bottom: 12px;
 }
@@ -1109,6 +1110,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
 
 .range-toggle-inside {
   position: absolute;

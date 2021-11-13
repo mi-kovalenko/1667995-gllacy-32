@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gllacy.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -69,8 +71,9 @@
             </select>
           </fieldset>
           <fieldset class="filter-group price">
+            <legend class="visually-hidden">Цена</legend>
             <div class="price-range-input-wrapper">
-              <legend class="filter-group-name">Цена:</legend>
+              <p class="filter-group-name">Цена:</p>
               <label class="catalog-filter-label"><input class="range-input" type="number" value="100" name="min-price"> ₽ - </label>
               <label class="catalog-filter-label"><input class="range-input" type="number" value="500" name="max-price"> ₽</label>
             </div>
@@ -80,11 +83,11 @@
                 <div class="price-range-scale">
                   <div class="price-range-bar" style="left: 32px; width: 56px">
                     <button class="range-toggle toggle-min" type="button">
-                      <div class="range-toggle-inside"></div>
+                      <span class="range-toggle-inside"></span>
                       <span class="visually-hidden">Изменить минимальную цену.</span>
                     </button>
                     <button class="range-toggle toggle-max" type="button">
-                      <div class="range-toggle-inside"></div>
+                      <span class="range-toggle-inside"></span>
                       <span class="visually-hidden">Изменить максимальную цену.</span>
                     </button>
                   </div>
@@ -418,6 +421,7 @@
                 <span class="visually-hidden">Предыдущая страница</span>
               </a>
             </li>
+            <!-- увеличить область клика -->
             <li class="catalogue-pagination-pages-item current">
               <a class="catalogue-pagination-pages-item-link" href="#">1</a>
             </li>
