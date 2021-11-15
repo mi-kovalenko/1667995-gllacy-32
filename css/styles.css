@@ -286,13 +286,21 @@ font-weight: 700;
 .popover-search .field::-webkit-search-cancel-button{
   position: absolute;
   right: 13px;
-  opacity: 1!important;
+  height: 16px;
+  width: 16px;
+  opacity: 0.4!important;
   background-image: url("../img/cross.svg");
   background-size: 16px 16px;
   pointer-events: auto!important;
+  -webkit-appearance: none;
   cursor: pointer;
 }
-/* борюсь с этой кнопкой, пока не очень успешно */
+
+/* работает только в хроме, щито делать? */
+
+.popover-search .field::-webkit-search-cancel-button:hover {
+  opacity: 1!important;
+}
 
 .navigation-right-link.log-in {
   padding-left: 40px;
