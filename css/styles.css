@@ -120,6 +120,10 @@ body {
   border-radius: 26px;
 }
 
+.navigation-left-item {
+  position: relative;
+}
+
 .navigation-left-link:hover {
   background: rgba(252, 252, 252, 0.5);
 }
@@ -140,6 +144,56 @@ body {
   background: var(--special-extra-bright);
 }
 
+.popover-categories-open {
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  display: block;
+  width: max-content;
+  background-color: var(--basic-extra-light);
+  border-radius: 4px;
+  filter: drop-shadow(0px 8px 16px rgba(45, 52, 64, 0.12));
+}
+
+.popover-categories {
+  display: none;
+}
+
+.popover-categories-list {
+  padding: 8px 0;
+  margin: 0;
+}
+
+.popover-category {
+  padding: 8px 16px;
+}
+
+.popover-category:first-of-type {
+font-weight: 700;
+}
+
+.popover-category:first-of-type::after {
+  display: block;
+  height: 1px;
+  margin-top: 12px;
+  background-color: var(--basic-neutral);
+  content: "";
+}
+
+.popover-category:hover {
+  background-color: var(--special-exta-light);
+}
+
+.popover-category:active {
+  background-color: var(--special-neutral);
+}
+
+.popover-category.current {
+  color: var(--basic-extra-light);
+  background-color: var(--special-extra-bright);
+}
+/* я не уверена, что тут именно класс current нужен, но не могу вспомнить, есть ли подходящий псевдокласс */
+
 .navigation-right {
   display: flex;
   align-content: center;
@@ -150,6 +204,7 @@ body {
 }
 
 .navigation-right-item {
+  position: relative;
   align-self: center;
   margin-left: 18px;
 }
@@ -193,12 +248,98 @@ body {
   background-position: center;
 }
 
+/* поповер */
+
+.popover {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-color: var(--basic-extra-light);
+  border-radius: 4px;
+  filter: drop-shadow(0px 15px 40px rgba(45, 52, 64, 0.12));
+}
+
+.popover-closed {
+  display: none;
+}
+
+/* поповер поиска */
+
+.popover-search {
+  width: 356px;
+  box-sizing: border-box;
+  padding: 24px 16px;
+}
+
+.popover-search .field {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  -webkit-appearance: none;
+}
+
+.popover-search .field:focus {
+  box-shadow: inset 0 0 0 1px var(--basic-neutral);
+}
+
+.popover-search .field::-webkit-search-cancel-button{
+  position: absolute;
+  right: 13px;
+  opacity: 1!important;
+  background-image: url("../img/cross.svg");
+  background-size: 16px 16px;
+  pointer-events: auto!important;
+  cursor: pointer;
+}
+/* борюсь с этой кнопкой, пока не очень успешно */
+
 .navigation-right-link.log-in {
   padding-left: 40px;
   background-image: url("../img/log-in.svg");
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: center left 16px;
+}
+
+/* поповер входа */
+
+.popover-login {
+  width: 420px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 48px 50px 48px;
+}
+
+.popover-login-heading {
+  margin-top: 48px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.login-form .field {
+  margin-bottom: 16px;
+}
+
+.login-form .btn-extra {
+  margin-right: 19px;
+}
+
+.login-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.login-form .login-link {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .navigation-right-link.cart {
@@ -219,6 +360,103 @@ body {
 
 .navigation-right-link-cart-icon {
   margin-right: 6px;
+}
+
+.popover-cart-empty {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  box-sizing: border-box;
+  width: 288px;
+  padding: 48px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  background-color: var(--basic-extra-light);
+  border-radius: 4px;
+  filter: drop-shadow(0px 8px 16px rgba(45, 52, 64, 0.12));
+}
+
+.popover-cart {
+  width: 440px;
+  padding: 48px;
+  padding-bottom: 44px;
+  box-sizing: border-box;
+}
+
+.cart-content h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.cart-content-list {
+  padding: 32px 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--basic-light);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 46px 1fr 87px 16px;
+  column-gap: 16px;
+  align-items: center;
+}
+/* я что-то невероятно тупанула, можно же весь список сделать гридом. штош. оставить так или сделать нормально? */
+
+.cart-item:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+
+.cart-item-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cart-item-amount {
+  display: flex;
+  color: var(--basic-neutral);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cart-item-amount p {
+  margin: 0;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cart-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cart-checkout .btn-extra {
+  color: var(--basic-extra-light);
+}
+
+.cart-button-delete {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  background-image: url("../img/cross.svg");
+  background-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 /* ----слайдшоу---- */
@@ -254,7 +492,6 @@ body {
 
 .slideshow-item-img {
   flex: none;
-  z-index: 2;
   width: 100px;
   opacity: 0.4;
 }
@@ -407,7 +644,6 @@ body {
   fill: var(--basic-extra-light);
   border: 2px solid rgba(252, 252, 252, 0.2);
   border-radius: 100px;
-  /* я эээ вообще выпилила атрибут fill отовсюдe в разметке, с currentColor почему-то не получается */
 } 
 
 .socials-link-icon:hover svg {
@@ -746,11 +982,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 16px;
+  margin-top: 0;
 }
 
 .delivery-legend {
   width: 380px;
   margin: 0;
+  margin-bottom: 32px;
   color: var(--basic-dark);
 }
 
@@ -780,6 +1019,39 @@ body {
   cursor: pointer;
 } 
 
+.tooltip {
+  position: absolute;
+  top: -7px;
+  transform: translateX(16px);
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: 162px;
+  /* я не понимаю, откуда он берёт ширину, по умолчанию же спан тянется, пока тянется */
+  padding: 10px 8px;
+  color: var(--basic-dark);
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  background: var(--basic-white);
+  border: 1px solid var(--basic-neutral);
+  box-shadow: 0px 4px 8px rgba(194, 194, 194, 0.2);
+}
+
+.tooltip::before {
+  position: absolute;
+  top: 10px;
+  left: -6.8px;
+  transform: rotate(45deg);
+  z-index: 3;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background-color: var(--basic-white);
+  border-left: 1px solid var(--basic-neutral);
+  border-bottom: 1px solid var(--basic-neutral);
+}
+
 .delivery-submit {
   margin: 0 auto;
   grid-column: 1 / -1;
@@ -795,6 +1067,7 @@ body {
   padding: 0;
   padding-left: 16px;
   color: var(--basic-extra-dark);
+  font-family: inherit;
   font-size: 16px;
   line-height: normal;
   border: none;
@@ -815,10 +1088,14 @@ body {
   outline: none;
 }
 
-/* .field:invalid {
+/* .field:invalid:not(:placeholder-shown) {
   box-shadow: inset 0 0 0 1px var(--status-error);
 } */
-/* если просто .field:invalid, то рамка окрашена постоянно. наверное, так не должно быть? */
+
+.field:user-invalid {
+  box-shadow: inset 0 0 0 1px var(--status-error);
+}
+/* в принципе, работает как и то, что выше, но селектор покороче :D */
 
 .field:focus:invalid {
   box-shadow: inset 0 0 0 1px var(--status-error);
@@ -1047,7 +1324,7 @@ body {
 }
 
 .select-sorting {
-  padding: 8px 16px;
+  padding: 8px 36px 8px 16px;
   width: 196px;
   box-sizing: border-box;
   font-size: 14px;
@@ -1061,6 +1338,7 @@ body {
   background-color: rgba(252, 252, 252, 0.3);
   background-image: url("../img/arrow-down.svg");
   background-position: center right 13px;
+  background-size: 16px 16px;
   background-repeat: no-repeat;
 }
 
@@ -1288,22 +1566,24 @@ body {
 }
 
 .catalogue-pagination {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 41px 0;
+  padding: 41px 0 81px 0;
+  border-bottom: 1px solid rgba(252, 252, 252, 0.3);
 }
 
 .catalogue-pagination-more {
   grid-column-start: 2; 
   justify-self: center;
 }
-/* эта кнопка выглядит по-разному в разных браузерах, почему так? */
 
 .catalogue-pagination-pages {
   display: flex;
   grid-column-start: 3; 
   align-items: center;
   justify-self: flex-end;
+  margin: 0;
   list-style-type: none;
 }
 
@@ -1511,3 +1791,72 @@ body {
 .btn-cart.disabled path {
   fill: var(--basic-dark);
 }
+
+/* ---модальное окно--- */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(45, 52, 64, 0.3);
+}
+
+.modal-container-closed {
+  display: none;
+}
+
+.modal-feedback {
+  position: relative;
+  display: block;
+  width: 570px;
+  margin: auto;
+  background-color: var(--basic-extra-light);
+  box-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
+  border-radius: 8px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/cross.svg");
+  background-size: 20px 20px;
+  background-repeat: none;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 64px 66px 64px;
+}
+
+.modal-heading {
+  margin: 32px 64px;
+  margin-top: 64px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.modal-form .field {
+  margin-bottom: 16px;
+}
+
+.modal-form-msg {
+  height: 149px;
+  padding-top: 14px;
+  margin-bottom: 32px;
+}
+
+.modal-form .btn-extra {
+  align-self: flex-end;
+}
+

@@ -14,6 +14,15 @@
         <ul class="navigation-left">
           <li class="navigation-left-item">
             <a class="navigation-left-link" href="catalogue.html">Каталог</a>
+            <div class="popover-categories">
+              <ul class="popover-categories-list">
+                <li class="popover-category">Новинки</li>
+                <li class="popover-category">Сливочное</li>
+                <li class="popover-category current">Щербеты</li>
+                <li class="popover-category">Фруктовый лёд</li>
+                <li class="popover-category">Мелорин</li>
+              </ul>
+            </div>
           </li>
           <li class="navigation-left-item">
             <a class="navigation-left-link" href="#">Доставка и оплата</a>
@@ -30,16 +39,78 @@
             <a class="navigation-right-link search" href="#">
               <span class="visually-hidden">Поиск</span>
             </a>
+            <div class="popover popover-search">
+              <form action="#" method="POST">
+                <label class="visually-hidden" for="search">Поиск</label>
+                <input class="field" type="search" id="search" name="search">
+              </form>
+            </div>
           </li>
           <li class="navigation-right-item">
             <a class="navigation-right-link log-in" href="#">
               <span>Вход</span>
             </a>
+            <div class="popover-closed popover-login">
+              <form class="login-form" action="#" method="POST">
+                <h2 class="popover-login-heading">Личный кабинет</h2>
+                <label class="visually-hidden" for="login-email">Email</label>
+                <input class="field" placeholder="email@example.com" type="email" name="login-email" id="login-email" required>
+                <label class="visually-hidden" for="password">Пароль</label>
+                <input class="field" type="password" id="password" name="password" minlength="8" pattern="" required>
+                <div class="login-bottom-wrapper">
+                  <button class="btn-extra" type="submit">Войти</button>
+                  <div class="login-links">
+                    <a class="login-link" href="#">Забыли пароль?</a>
+                    <a class="login-link" href="#">Регистрация</a>  
+                  </div>
+                </div>
+              </form>
+            </div>
           </li>
           <li class="navigation-right-item">
             <a class="navigation-right-link cart" href="#">
               <span>Пусто</span>
             </a>
+            <div class="popover-closed popover-cart-empty">Ваша корзина пока пуста</div>
+            <div class="popover-closed popover-cart">
+              <section class="cart-content">
+                <h2>Корзина</h2>
+                <ul class="cart-content-list">
+                  <li class="cart-item">
+                    <img class="cart-item-img" src="img/catalogue/raspberry.png" width="46" height="46" alt="Малинка.">
+                    <div class="cart-item-product">
+                      <h3 class="cart-item-title">Малинка</h3>
+                      <div class="cart-item-amount">
+                        <p class="cart-item-amount-weight">1,5</p>&nbsp;кг х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                      </div>
+                        <!-- подозреваю, что контент будет меняться раздельно, но хз, можно и в один параграф ляпнуть -->
+                    </div>
+                    <p class="cart-item-price">310 ₽</p>
+                    <button class="cart-button-delete">
+                      <span class="visually-hidden">Удалить из корзины</span>
+                    </button>
+                  </li>
+                  <li class="cart-item">
+                    <img class="cart-item-img" src="img/catalogue/bubblegum.png" width="46" height="46" alt="Бабл-гам.">
+                    <div class="cart-item-product">
+                      <h3 class="cart-item-title">Бабл-гам</h3>
+                      <div class="cart-item-amount">
+                        <p class="cart-item-amount-weight">1,5</p>&nbsp;кг&nbsp;х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                      </div>
+                    </div>
+                    <p class="cart-item-price">310 ₽</p>
+                    <button class="cart-button-delete">
+                      <span class="visually-hidden">Удалить из корзины</span>
+                    </button>
+                  </li>
+                </ul>
+                <div class="cart-checkout">
+                  <a href="#" class="btn-extra">Оформить заказ</a>
+                  <p class="cart-total">Итого: 790 ₽</p>
+                  <!-- да и тут тоже стопроц -->
+                </div>
+              </section>
+            </div>
           </li>
         </ul>
       </nav>
@@ -259,6 +330,7 @@
                     <label class="delivery-label" for="delivery-date">Дата</label>
                     <button class="tooltip-icon" type="button">
                       <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                      <span class="tooltip">Введите название улицы, дома и квартиры</span>
                     </button>
                   </span>
                   <input class="field" type="text" name="delivery-date" id="delivery-date" placeholder="01.04.2020" disabled>
@@ -341,5 +413,26 @@
         </div>
       </div>
     </footer>
+    <!-- модальное окно обратной связи -->
+    <div class="modal-container modal-container-closed">
+      <div class="modal-feedback">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть окно.</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-heading" >Мы обязательно ответим вам!</h2>
+          <form class="modal-form" action="#" method="POST">
+            <label class="visually-hidden" for="modal-name">Имя</label>
+            <input class="field" placeholder="Имя и фамилия" type="text" name="modal-name" id="modal-name">
+            <label class="visually-hidden" for="modal-email">Email</label>
+            <input class="field" placeholder="email@example.com" type="email" name="modal-email" id="modal-email" required>
+            <label class="visually-hidden" for="msg">Ваше сообщение</label>
+            <textarea class="field modal-form-msg" placeholder="В свободной форме" name="msg"  id="msg" required></textarea>
+            <button class="btn-extra" type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
   </body>
 </html>
