@@ -169,7 +169,8 @@ body {
 }
 
 .popover-category:first-of-type {
-font-weight: 700;
+  padding-bottom: 0;
+  font-weight: 700;
 }
 
 .popover-category:first-of-type::after {
@@ -769,10 +770,18 @@ font-weight: 700;
   border-radius: 8px;
 }
 
+.products-list-card:focus-within {
+  outline: 2px solid var(--basic-extra-dark);
+}
+
 .products-list-card-link {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.products-list-card-link:focus {
+  outline: none;
 }
 
 .products-list-card-img {
@@ -1473,6 +1482,8 @@ font-weight: 700;
 }
 
 /* радио-кнопки жыр */
+
+/* что делать с кнопками на фокусе? они вообще не выделяются при табании */
 
 .control {
   position: relative;
