@@ -14,13 +14,23 @@
         <ul class="navigation-left">
           <li class="navigation-left-item">
             <a class="navigation-left-link" href="catalogue.html">Каталог</a>
-            <div class="popover-categories">
+            <div class="popover-categories-open">
               <ul class="popover-categories-list">
-                <li class="popover-category">Новинки</li>
-                <li class="popover-category">Сливочное</li>
-                <li class="popover-category current">Щербеты</li>
-                <li class="popover-category">Фруктовый лёд</li>
-                <li class="popover-category">Мелорин</li>
+                <li class="popover-category">
+                  <a class="popover-category-link" href="#">Новинки</a>
+                </li>
+                <li class="popover-category">
+                  <a class="popover-category-link" href="#">Сливочное</a>
+                </li>
+                <li class="popover-category current">
+                  <a class="popover-category-link" href="#">Щербеты</a>
+                </li>
+                <li class="popover-category">
+                  <a class="popover-category-link" href="#">Фруктовый лёд</a>
+                </li>
+                <li class="popover-category">
+                  <a class="popover-category-link" href="#">Мелорин</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -72,32 +82,36 @@
               <span>Пусто</span>
             </a>
             <div class="popover-closed popover-cart-empty">Ваша корзина пока пуста</div>
-            <div class="popover-closed popover-cart">
+            <div class="popover popover-cart">
               <section class="cart-content">
                 <h2>Корзина</h2>
                 <ul class="cart-content-list">
                   <li class="cart-item">
-                    <img class="cart-item-img" src="img/catalogue/raspberry.png" width="46" height="46" alt="Малинка.">
-                    <div class="cart-item-product">
-                      <h3 class="cart-item-title">Малинка</h3>
-                      <div class="cart-item-amount">
-                        <p class="cart-item-amount-weight">1,5</p>&nbsp;кг х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                    <a class="cart-item-link" href="#">
+                      <img class="cart-item-img" src="img/catalogue/raspberry.png" width="46" height="46" alt="Малинка.">
+                      <div class="cart-item-product">
+                        <h3 class="cart-item-title">Малинка</h3>
+                        <div class="cart-item-amount">
+                          <p class="cart-item-amount-weight">1,5</p>&nbsp;кг х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                        </div>
+                          <!-- подозреваю, что контент будет меняться раздельно, но хз, можно и в один параграф ляпнуть -->
                       </div>
-                        <!-- подозреваю, что контент будет меняться раздельно, но хз, можно и в один параграф ляпнуть -->
-                    </div>
+                    </a>
                     <p class="cart-item-price">310 ₽</p>
                     <button class="cart-button-delete">
                       <span class="visually-hidden">Удалить из корзины</span>
                     </button>
                   </li>
                   <li class="cart-item">
-                    <img class="cart-item-img" src="img/catalogue/bubblegum.png" width="46" height="46" alt="Бабл-гам.">
-                    <div class="cart-item-product">
-                      <h3 class="cart-item-title">Бабл-гам</h3>
-                      <div class="cart-item-amount">
-                        <p class="cart-item-amount-weight">1,5</p>&nbsp;кг&nbsp;х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                    <a class="cart-item-link" href="#">
+                      <img class="cart-item-img" src="img/catalogue/bubblegum.png" width="46" height="46" alt="Бабл-гам.">
+                      <div class="cart-item-product">
+                        <h3 class="cart-item-title">Бабл-гам</h3>
+                        <div class="cart-item-amount">
+                          <p class="cart-item-amount-weight">1,5</p>&nbsp;кг&nbsp;х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
+                        </div>
                       </div>
-                    </div>
+                    </a>
                     <p class="cart-item-price">310 ₽</p>
                     <button class="cart-button-delete">
                       <span class="visually-hidden">Удалить из корзины</span>
