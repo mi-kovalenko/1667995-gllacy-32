@@ -144,7 +144,7 @@ body {
   background: var(--special-extra-bright);
 }
 
-.popover-categories-open {
+.popover-categories.open {
   position: absolute;
   top: 40px;
   z-index: 1;
@@ -256,14 +256,14 @@ body {
   top: 40px;
   right: 0;
   z-index: 1;
-  display: block;
+  display: none;
   background-color: var(--basic-extra-light);
   border-radius: 4px;
   filter: drop-shadow(0px 15px 40px rgba(45, 52, 64, 0.12));
 }
 
-.popover-closed {
-  display: none;
+.popover.open {
+  display: block;
 }
 
 /* поповер поиска */
@@ -480,7 +480,7 @@ body {
 /* ----слайдшоу---- */
 
 .slideshow {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
   position: relative;
 }
 
@@ -530,9 +530,11 @@ body {
   display: block;
   width: 470px;
   margin-right: 20px;
+  padding-bottom: 35px;
 }
 
 .slideshow-item-description h3 {
+  margin-bottom: 24px;
   font-weight: 900;
   font-size: 36px;
   line-height: 46px;
@@ -540,6 +542,7 @@ body {
 
 .slideshow-item-description p {
   width: 414px;
+  margin-bottom: 44px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -555,7 +558,7 @@ body {
   position: absolute;
   top: 50%;
   right: 280px;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
   width: 350px;
   display: flex;
   justify-content: space-between;
@@ -680,7 +683,7 @@ body {
 /* ----промо---- */
 
 .promo {
-  margin-bottom: 80px;
+  margin-bottom: 81px;
 }
 
 .promo-header {
@@ -714,8 +717,8 @@ body {
 
 .promo-item.marshmallow {
   background-image: url("../img/promo-marshmallow.png");
-  background-size: 232px auto;
-  background-position: right 7px bottom;
+  background-size: 240px auto;
+  background-position: right 3px bottom;
 }
 
 .promo-text {
@@ -727,7 +730,7 @@ body {
 
 .promo-item-header {
   margin: 0;
-  padding: 12px 0 16px 0;
+  padding: 12px 0 14px 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
@@ -735,7 +738,8 @@ body {
 
 .promo-text p {
   margin: 0;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
+
 }
 
 .promo-img {
@@ -759,7 +763,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, 270px);
   gap: 90px 30px;
-  margin-top: 100px;
+  margin-top: 105px;
   padding: 0;
   list-style: none;
 }
@@ -801,7 +805,7 @@ body {
 .products-list-card-description {
   width: 190px;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: center;
   color: var(--basic-dark);
 }
@@ -870,18 +874,22 @@ body {
 
 .advantages-list-item.popsicle {
   background-image: url("../img/popsicle.svg");
+  background-position: left top;
 }
 
 .advantages-list-item.cow {
   background-image: url("../img/cow.svg");
+  background-position: left top;
 }
 
 .advantages-list-item.leaf {
   background-image: url("../img/leaf.svg");
+  background-position: left top;
 }
 
 .advantages-list-item.thermometer {
   background-image: url("../img/thermometer.svg");
+  background-position: left top;
 }
 
 .advantages-list-item-description {
@@ -1022,50 +1030,62 @@ body {
 }
 
 .delivery-form-label {
-  position: relative;
+  display: flex;
   padding-right: 16px;
   margin-bottom: 8px;
 }
 
 .delivery-label {
+  margin-right: 4px;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
 }
 
-.tooltip-icon {
-  position: absolute;
+.tooltip-wrap {
+  display: grid;
+  grid-template-columns: 14px max-content;
+  height: 20px;
+}
+
+.tooltip-btn {
   width: 14px;
   height: 14px;
-  margin-top: 3px;
-  margin-left: 4px;  
+  margin-top: 2px;
   border: none;
   background-image: url("../img/info-label.svg");
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
 } 
 
-.tooltip {
-  position: absolute;
+.tooltip-content {
+  position: relative;
   top: -7px;
-  transform: translateX(16px);
-  z-index: 1;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 10px 7px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   max-width: 162px;
-  /* я не понимаю, откуда он берёт ширину, по умолчанию же спан тянется, пока тянется */
-  padding: 10px 8px;
-  color: var(--basic-dark);
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  text-align: left;
+  color: var(--basic-dark);
   background: var(--basic-white);
-  border: 1px solid var(--basic-neutral);
   box-shadow: 0px 4px 8px rgba(194, 194, 194, 0.2);
+  border: 1px solid var(--basic-neutral);
+  border-radius: 1px;
+  z-index: 1;
+  display: none;
 }
 
-.tooltip::before {
+.tooltip-wrap:hover .tooltip-content {
+  display: unset;
+}
+
+.tooltip-content::before {
   position: absolute;
   top: 10px;
   left: -6.8px;
@@ -1116,22 +1136,17 @@ body {
   outline: none;
 }
 
-/* .field:invalid:not(:placeholder-shown) {
-  box-shadow: inset 0 0 0 1px var(--status-error);
-} */
-
-.field:user-invalid {
+.field:invalid:not(:placeholder-shown) {
   box-shadow: inset 0 0 0 1px var(--status-error);
 }
-/* в принципе, работает как и то, что выше, но селектор покороче :D */
-
+/* 
 .field:focus:invalid {
   box-shadow: inset 0 0 0 1px var(--status-error);
 }
 
 .field:hover:invalid {
   box-shadow: inset 0 0 0 2px var(--status-error);
-}
+} */
 
 .field:disabled, .field:disabled:hover {
   background-color: var(--basic-light);
@@ -1483,7 +1498,7 @@ body {
 
 /* радио-кнопки жыр */
 
-/* что делать с кнопками на фокусе? они вообще не выделяются при табании */
+/* что делать с инпутами на фокусе? они вообще не выделяются при табании */
 
 .control {
   position: relative;
@@ -1587,7 +1602,7 @@ body {
 
 
 
-/* ----собсно каталог---- */
+/* ----каталог---- */
 
 .catalogue-products-type {
   font-weight: 900;
@@ -1752,7 +1767,6 @@ body {
   border: 2px solid var(--basic-extra-light);
   border-radius: 20px;
   outline: none;
-  
   cursor: pointer;
 }
 
@@ -1833,14 +1847,14 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
   background-color: rgba(45, 52, 64, 0.3);
 }
 
-.modal-container-closed {
-  display: none;
+.modal-container.open {
+  display: flex;
 }
 
 .modal-feedback {
@@ -1851,6 +1865,9 @@ body {
   background-color: var(--basic-extra-light);
   box-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
   border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - 40px);
 }
 
 .modal-close-button {
@@ -1894,4 +1911,3 @@ body {
 .modal-form .btn-extra {
   align-self: flex-end;
 }
-
