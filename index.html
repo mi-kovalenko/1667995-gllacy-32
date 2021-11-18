@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <h1 class="visually-hidden">Магазин мороженого "Глейси".</h1>
     <header>
       <nav class="navigation">
         <a class="navigation-logo" href="index.html">
@@ -14,7 +15,8 @@
         <ul class="navigation-left">
           <li class="navigation-left-item">
             <a class="navigation-left-link" href="catalogue.html">Каталог</a>
-            <div class="popover-categories open">
+            <!-- popover-categories открывается добавлением класса open -->
+            <div class="popover-categories">
               <ul class="popover-categories-list">
                 <li class="popover-category">
                   <a class="popover-category-link" href="#">Новинки</a>
@@ -22,7 +24,7 @@
                 <li class="popover-category">
                   <a class="popover-category-link" href="#">Сливочное</a>
                 </li>
-                <li class="popover-category current">
+                <li class="popover-category">
                   <a class="popover-category-link" href="#">Щербеты</a>
                 </li>
                 <li class="popover-category">
@@ -49,6 +51,7 @@
             <a class="navigation-right-link search" href="#">
               <span class="visually-hidden">Поиск</span>
             </a>
+            <!-- здесь и далее элементы с классом popover открываются добавлением класса open -->
             <div class="popover popover-search">
               <form action="https://echo.htmlacademy.ru" method="POST">
                 <label class="visually-hidden" for="search">Поиск</label>
@@ -66,12 +69,12 @@
                 <label class="visually-hidden" for="login-email">Email</label>
                 <input class="field" placeholder="email@example.com" type="email" name="login-email" id="login-email" required>
                 <label class="visually-hidden" for="password">Пароль</label>
-                <input class="field" type="password" id="password" name="password" minlength="8" pattern="" required>
+                <input class="field" type="password" id="password" name="password" minlength="8" required>
                 <div class="login-bottom-wrapper">
                   <button class="btn-extra" type="submit">Войти</button>
                   <div class="login-links">
                     <a class="login-link" href="#">Забыли пароль?</a>
-                    <a class="login-link" href="#">Регистрация</a>  
+                    <a class="login-link" href="#">Регистрация</a>
                   </div>
                 </div>
               </form>
@@ -82,63 +85,19 @@
               <span>Пусто</span>
             </a>
             <div class="popover popover-cart-empty">Ваша корзина пока пуста</div>
-            <div class="popover open popover-cart">
-              <section class="cart-content">
-                <h2>Корзина</h2>
-                <ul class="cart-content-list">
-                  <li class="cart-item">
-                    <a class="cart-item-link" href="#">
-                      <img class="cart-item-img" src="img/catalogue/raspberry.png" width="46" height="46" alt="Малинка.">
-                      <div class="cart-item-product">
-                        <h3 class="cart-item-title">Малинка</h3>
-                        <div class="cart-item-amount">
-                          <p class="cart-item-amount-weight">1</p>&nbsp;кг х&nbsp;<p class="cart-item-amount-price">310 ₽</p>  
-                        </div>
-                      </div>
-                    </a>
-                    <p class="cart-item-price">310 ₽</p>
-                    <button class="cart-button-delete" type="button">
-                      <span class="visually-hidden">Удалить из корзины</span>
-                    </button>
-                  </li>
-                  <li class="cart-item">
-                    <a class="cart-item-link" href="#">
-                      <img class="cart-item-img" src="img/catalogue/bubblegum.png" width="46" height="46" alt="Бабл-гам.">
-                      <div class="cart-item-product">
-                        <h3 class="cart-item-title">Бабл-гам</h3>
-                        <div class="cart-item-amount">
-                          <p class="cart-item-amount-weight">
-                            <span>1,5</span>&nbsp;кг&nbsp;х&nbsp;<span class="cart-item-amount-price">320 ₽</span> 
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                    <p class="cart-item-price">480 ₽</p>
-                    <button class="cart-button-delete" type="button">
-                      <span class="visually-hidden">Удалить из корзины</span>
-                    </button>
-                  </li>
-                </ul>
-                <div class="cart-checkout">
-                  <a href="#" class="btn-extra">Оформить заказ</a>
-                  <p class="cart-total">Итого: 790 ₽</p>
-                </div>
-              </section>
-            </div>
           </li>
         </ul>
       </nav>
     </header>
     <main class="main-container">
       <div class="page-container">
-        <h1 class="visually-hidden">Магазин мороженого "Глейси".</h1>
         <section class="slider">
           <h2 class="visually-hidden">Наше мороженое</h2>
           <div class="slideshow">
             <ul class="slideshow-items">
               <li class="slideshow-item active">
                 <div class="slideshow-item-description">
-                  <h3>Нежный пломбир с&nbsp;клубничным джемом</h3>         
+                  <h3>Нежный пломбир с&nbsp;клубничным джемом</h3>
                   <p>Натуральное мороженое из свежих сливок и&nbsp;молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
                   <a href="#" class="btn-main">Заказать</a>
                 </div>
@@ -148,7 +107,7 @@
               </li>
               <li class="slideshow-item">
                 <div class="slideshow-item-description">
-                  <h3>Сливочное мороженое со вкусом банана</h3>         
+                  <h3>Сливочное мороженое со вкусом банана</h3>
                   <p>Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день. </p>
                   <a href="#" class="btn-main">Заказать</a>
                 </div>
@@ -158,7 +117,7 @@
               </li>
               <li class="slideshow-item">
                 <div class="slideshow-item-description">
-                  <h3>Карамельный пломбир с маршмеллоу</h3>         
+                  <h3>Карамельный пломбир с маршмеллоу</h3>
                   <p>Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
                   <a href="#" class="btn-main">Заказать</a>
                 </div>
@@ -192,19 +151,16 @@
               <ul class="socials">
                 <li class="socials-link">
                   <a class="socials-link-icon vk-icon" href="https://vk.com/htmlacademy">
-                    <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.4 9.98H7.9s-1.05.06-1.98-.79c-1.01-.92-1.9-2.76-1.9-2.76s-.06-.12 0-.18.23-.07.23-.07H5.4s.11.01.19.06c.06.04.1.12.1.12s.18.4.43.78c.47.72.7.88.86.8.24-.11.16-1.02.16-1.02s0-.33-.11-.48c-.1-.11-.28-.14-.36-.15-.06-.01.04-.14.18-.2.2-.09.57-.1 1-.09.33 0 .43.02.56.05.3.06.3.27.27.71a9.7 9.7 0 0 0-.01.6c-.01.22-.02.48.15.58.09.05.3 0 .84-.8.25-.37.44-.81.44-.81s.04-.08.11-.12c.07-.03.15-.02.15-.02h1.2s.37-.04.43.1c.06.15-.14.5-.63 1.07-.46.54-.69.75-.67.92.01.13.16.25.44.48a3.4 3.4 0 0 1 .8.8c.26.4-.3.42-.3.42l-1.06.02s-.23.04-.54-.15c-.15-.1-.3-.25-.45-.4-.23-.22-.44-.43-.62-.38-.3.08-.28.65-.28.65s0 .12-.07.18c-.07.07-.22.08-.22.08Z"/></svg>
                     <span class="visually-hidden">ВКонтакте</span>
                   </a>
                 </li>
                 <li class="socials-link">
                   <a class="socials-link-icon fb-icon" href="https://facebook.com/htmlacademy">
-                    <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-6.381.6h-.952V12H7.143V8.6H6V7h1.143V5.88c0-1.217.734-1.88 1.769-1.88.495 0 .964.039 1.088.056V5.4h-.571c-.762 0-.762.388-.762.8V7H10l-.381 1.6Z"/></svg>
                     <span class="visually-hidden">Facebook</span>
                   </a>
                 </li>
                 <li class="socials-link">
                   <a class="socials-link-icon insta-icon" href="https://instagram.com/htmlacademy">
-                    <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.649 4.024C9.222 4.004 9.087 4 8 4s-1.222.005-1.649.024c-.426.02-.716.087-.971.186-.267.1-.509.258-.709.461-.203.2-.36.442-.461.709-.1.255-.166.545-.186.971C4.004 6.778 4 6.913 4 8s.005 1.222.024 1.649c.02.426.087.716.186.971.1.267.258.509.461.709.2.203.442.36.709.461.255.099.545.166.971.186.427.02.562.024 1.649.024s1.222-.005 1.649-.024c.426-.02.716-.087.971-.186.267-.1.509-.258.709-.461.203-.2.36-.442.461-.709.099-.255.166-.545.186-.971.02-.427.024-.562.024-1.649s-.005-1.222-.024-1.649a2.955 2.955 0 0 0-.186-.971 1.963 1.963 0 0 0-.461-.709 1.95 1.95 0 0 0-.709-.461c-.255-.1-.545-.166-.971-.186ZM6.586 6.586a2 2 0 1 1 2.828 2.828 2 2 0 0 1-2.828-2.828Zm3.868-1.04a.5.5 0 1 1-.708.708.5.5 0 0 1 .708-.708ZM8.849 7.151A1.2 1.2 0 1 0 7.15 8.85 1.2 1.2 0 0 0 8.85 7.15Z"/></svg>
                     <span class="visually-hidden">Instagram</span>
                   </a>
                 </li>
@@ -216,7 +172,7 @@
           <h2 class="heading-2 promo-header">Заказывайте мороженое и получайте подарки!</h2>
           <div class="promo-container">
             <article class="promo-item raspberry">
-              <div class="promo-text">   
+              <div class="promo-text">
                 <h3 class="promo-item-header">Малинка даром!</h3>
                 <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
                 <a class="btn-main" href="#">Хочу подарок</a>
@@ -367,7 +323,7 @@
                       <span class="tooltip-content">Введите название улицы, дома и квартиры</span>
                     </span>
                   </span>
-                  <input class="field" type="text" name="delivery-address" id="delivery-address" placeholder="Большая Конюшенная, 19/8">
+                  <input class="field" type="text" name="delivery-address" id="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">
                 </p>
                 <button class="btn-extra delivery-submit" type="submit">Отправить</button>
               </form>
@@ -379,7 +335,7 @@
           <div class="contacts-card">
             <address class="contacts-address">
               <p>Адрес главного офиса<br>и офлайн-магазина:</p>
-              <b>наб. Реки Карповки, 5 лит П, Санкт-Петербург</b>
+              <b>наб. Реки Карповки,<br>5 лит П, Санкт-Петербург</b>
               <p>Для заказов по телефону:</p>
               <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
               <p class="contacts-fineprint">(с 10 до 20 ежедневно)</p>
@@ -394,19 +350,16 @@
         <ul class="socials">
           <li class="socials-link">
             <a class="socials-link-icon vk-icon" href="https://vk.com/htmlacademy">
-              <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.4 9.98H7.9s-1.05.06-1.98-.79c-1.01-.92-1.9-2.76-1.9-2.76s-.06-.12 0-.18.23-.07.23-.07H5.4s.11.01.19.06c.06.04.1.12.1.12s.18.4.43.78c.47.72.7.88.86.8.24-.11.16-1.02.16-1.02s0-.33-.11-.48c-.1-.11-.28-.14-.36-.15-.06-.01.04-.14.18-.2.2-.09.57-.1 1-.09.33 0 .43.02.56.05.3.06.3.27.27.71a9.7 9.7 0 0 0-.01.6c-.01.22-.02.48.15.58.09.05.3 0 .84-.8.25-.37.44-.81.44-.81s.04-.08.11-.12c.07-.03.15-.02.15-.02h1.2s.37-.04.43.1c.06.15-.14.5-.63 1.07-.46.54-.69.75-.67.92.01.13.16.25.44.48a3.4 3.4 0 0 1 .8.8c.26.4-.3.42-.3.42l-1.06.02s-.23.04-.54-.15c-.15-.1-.3-.25-.45-.4-.23-.22-.44-.43-.62-.38-.3.08-.28.65-.28.65s0 .12-.07.18c-.07.07-.22.08-.22.08Z"/></svg>
               <span class="visually-hidden">ВКонтакте</span>
             </a>
           </li>
           <li class="socials-link">
             <a class="socials-link-icon fb-icon" href="https://facebook.com/htmlacademy">
-              <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-6.381.6h-.952V12H7.143V8.6H6V7h1.143V5.88c0-1.217.734-1.88 1.769-1.88.495 0 .964.039 1.088.056V5.4h-.571c-.762 0-.762.388-.762.8V7H10l-.381 1.6Z"/></svg>
               <span class="visually-hidden">Facebook</span>
             </a>
           </li>
           <li class="socials-link">
             <a class="socials-link-icon insta-icon" href="https://instagram.com/htmlacademy">
-              <svg width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.649 4.024C9.222 4.004 9.087 4 8 4s-1.222.005-1.649.024c-.426.02-.716.087-.971.186-.267.1-.509.258-.709.461-.203.2-.36.442-.461.709-.1.255-.166.545-.186.971C4.004 6.778 4 6.913 4 8s.005 1.222.024 1.649c.02.426.087.716.186.971.1.267.258.509.461.709.2.203.442.36.709.461.255.099.545.166.971.186.427.02.562.024 1.649.024s1.222-.005 1.649-.024c.426-.02.716-.087.971-.186.267-.1.509-.258.709-.461.203-.2.36-.442.461-.709.099-.255.166-.545.186-.971.02-.427.024-.562.024-1.649s-.005-1.222-.024-1.649a2.955 2.955 0 0 0-.186-.971 1.963 1.963 0 0 0-.461-.709 1.95 1.95 0 0 0-.709-.461c-.255-.1-.545-.166-.971-.186ZM6.586 6.586a2 2 0 1 1 2.828 2.828 2 2 0 0 1-2.828-2.828Zm3.868-1.04a.5.5 0 1 1-.708.708.5.5 0 0 1 .708-.708ZM8.849 7.151A1.2 1.2 0 1 0 7.15 8.85 1.2 1.2 0 0 0 8.85 7.15Z"/></svg>
               <span class="visually-hidden">Instagram</span>
             </a>
           </li>
@@ -431,7 +384,7 @@
         </div>
       </div>
     </footer>
-    <!-- модальное окно обратной связи -->
+    <!-- модальное окно обратной связи, открывается добавлением класса open -->
     <div class="modal-container">
       <div class="modal-feedback">
         <button class="modal-close-button" type="button">
