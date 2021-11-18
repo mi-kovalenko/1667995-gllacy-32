@@ -54,10 +54,13 @@
               <span class="visually-hidden">Поиск</span>
             </a>
             <!-- здесь и далее элементы с классом popover открываются добавлением класса open -->
-            <div class="popover popover-search">
+            <div class="popover open popover-search">
               <form action="https://echo.htmlacademy.ru" method="POST">
                 <label class="visually-hidden" for="search">Поиск</label>
                 <input class="field" type="search" id="search" name="search">
+                <button class="search-reset-btn" type="reset">
+                  <span class="visually-hidden">Очистить поле.</span>
+                </button>
               </form>
             </div>
           </li>
