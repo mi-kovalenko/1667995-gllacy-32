@@ -112,6 +112,8 @@ body {
 }
 
 .navigation a {
+  display: inline-block;
+
   text-decoration: none;
   color: var(--basic-extra-dark);
 }
@@ -942,7 +944,6 @@ body {
   transition-duration: 200ms;
   transform: translateY(-5px);
 }
-/* если бы я была юзером, меня бы невероятно бесила анимация, но ничего лучше не придумала */
 
 .products-list-card-link {
   display: flex;
@@ -1128,6 +1129,9 @@ body {
 /* ----рассылка---- */
 
 .newsletter {
+  display: flex;
+  flex-direction: column;
+
   box-sizing: border-box;
   width: 570px;
   padding: 6px;
@@ -1142,6 +1146,8 @@ body {
 }
 
 .newsletter-card {
+  flex-grow: 1;
+
   box-sizing: border-box;
   padding: 26px;
 
@@ -1366,14 +1372,6 @@ body {
 .field:invalid:not(:placeholder-shown) {
   box-shadow: inset 0 0 0 1px var(--status-error);
 }
-/*
-.field:focus:invalid {
-  box-shadow: inset 0 0 0 1px var(--status-error);
-}
-
-.field:hover:invalid {
-  box-shadow: inset 0 0 0 2px var(--status-error);
-} */
 
 .field:disabled,
 .field:disabled:hover {
@@ -1453,9 +1451,6 @@ body {
 /* ----подвал---- */
 
 .footer-container {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
   display: grid;
   grid-template-columns: 200px 1fr 200px;
 
@@ -1500,8 +1495,6 @@ body {
 
   font-size: 14px;
   line-height: 20px;
-
-  /* gap: 8px 0; */
 }
 
 .footer-menu-item {
@@ -2363,6 +2356,8 @@ body {
   height: 149px;
   margin-bottom: 32px;
   padding: 14px 16px;
+
+  resize: vertical;
 }
 
 .modal-form .btn-extra {
