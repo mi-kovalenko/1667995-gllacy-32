@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gllacy.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
+  <!-- класс тушки навешивается в зависимости от того, какой слайд в слайдшоу активен, меняет цвет тушки -->
+  <body class="slide-one-active">
     <h1 class="visually-hidden">Магазин мороженого "Глейси".</h1>
     <header>
       <nav class="navigation">
@@ -98,7 +101,8 @@
           <h2 class="visually-hidden">Наше мороженое</h2>
           <div class="slideshow">
             <ul class="slideshow-items">
-              <li class="slideshow-item active">
+              <!-- слайды включаются добавлением класса active -->
+              <li class="slideshow-item one active">
                 <div class="slideshow-item-description">
                   <h3>Нежный пломбир с&nbsp;клубничным джемом</h3>
                   <p>Натуральное мороженое из свежих сливок и&nbsp;молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
@@ -108,7 +112,7 @@
                   <img src="img/slider-strawberry-active.png" width="312" height="507" alt="">
                 </div>
               </li>
-              <li class="slideshow-item">
+              <li class="slideshow-item two">
                 <div class="slideshow-item-description">
                   <h3>Сливочное мороженое со вкусом банана</h3>
                   <p>Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день. </p>
@@ -118,7 +122,7 @@
                   <img src="img/slider-banana-active.png" width="312" height="507" alt="">
                 </div>
               </li>
-              <li class="slideshow-item">
+              <li class="slideshow-item three">
                 <div class="slideshow-item-description">
                   <h3>Карамельный пломбир с маршмеллоу</h3>
                   <p>Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
@@ -369,21 +373,21 @@
         </ul>
         <ul class="footer-menu">
           <li class="footer-menu-item">
-            <a class="footer-menu-item-link supply" href="">Для поставщиков</a>
+            <a class="footer-menu-item-link supply" href="#">Для поставщиков</a>
           </li>
           <li class="footer-menu-item">
-            <a class="footer-menu-item-link" href="">Наши документы</a>
+            <a class="footer-menu-item-link" href="#">Наши документы</a>
           </li>
           <li class="footer-menu-item">
-            <a class="footer-menu-item-link" href="">О производстве</a>
+            <a class="footer-menu-item-link" href="#">О производстве</a>
           </li>
           <li class="footer-menu-item">
-            <a class="footer-menu-item-link" href="">Экологические стандарты</a>
+            <a class="footer-menu-item-link" href="#">Экологические стандарты</a>
           </li>
         </ul>
         <div class="credits">
           <a href="https://htmlacademy.ru">
-            <img class="credits-logo" src="img/logo_htmlacademy.svg" width="93" height="26" alt="Логотип htmlacademy.">
+            <img class="credits-logo" src="img/logo-htmlacademy.svg" width="93" height="26" alt="Логотип htmlacademy.">
           </a>
           <p class="credits-organization">Сделано в <a href="https://htmlacademy.ru">.html academy</a> © 2021</p>
         </div>
