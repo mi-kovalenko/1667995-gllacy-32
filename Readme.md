@@ -15,3 +15,21 @@ Popups:
 
 - popups appear when clicking on the search button, "Login", and the shopping cart button, and they close when clicking outside the popup window.
 - a modal window appears when clicking on the "Feedback Form" button and closes when clicking on the close (cross) icon.
+
+## Setup
+
+Несколько вариантов:
+
+[Скачать ZIP архив с проектом (прямая ссылка)](https://github.com/ena0berzerk/team-28/archive/refs/heads/main.zip)
+
+Клонировать через SSH:
+
+```bash
+git clone git@github.com:mi-kovalenko/1667995-gllacy-32.git
+```
+
+Клонировать через HTTPS:
+
+```bash
+git clone https://github.com/mi-kovalenko/1667995-gllacy-32.git
+```
