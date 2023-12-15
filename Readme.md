@@ -34,4 +34,4 @@ git clone https://github.com/mi-kovalenko/1667995-gllacy-32.git
 
 ## Start
 
-You can either open index.html and catalogue.html directly in the browser or use "Live Server Extension" in VSCode
+You can either open index.html and catalogue.html directly in the browser or use "Live Server" extension in VSCode
