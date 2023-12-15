@@ -1,43 +1,38 @@
-# Личный проект «Глейси»
+# Gllacy Ice-cream Shop
 
-* Студент: [Mario Kovalenko](https://up.htmlacademy.ru/htmlcss/32/user/1667995).
-* Наставник: `Юлия Антонова`.
+## Deployment
+https://mi-kovalenko.github.io/1667995-gllacy-32/
 
----
+The main page and the catalog page have been designed.
+Interactive elements have been styled with hover states.
+Forms with validation.
 
-_Не удаляйте и не обращайте внимание на файлы:_<br>
-_`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`._
+## Catalog Page:
 
----
+- a product filtering form.
+- a dropdown list of product categories appears when hovering over the "Catalog" link in the header.
+  
+## Popups:
 
-### Памятка
+- popups appear when clicking on the search button, "Login", and the shopping cart button, and they close when clicking outside the popup window.
+- a modal window appears when clicking on the "Feedback Form" button and closes when clicking on the close (cross) icon.
 
-#### 1. Зарегистрируйтесь на Гитхабе
+# Setup
 
-Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
+- download ZIP  
 
-#### 2. Создайте форк
+- via SSH:
 
-[Откройте мастер-репозиторий](https://github.com/htmlacademy-htmlcss/1667995-gllacy-32) и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии скопируется в ваш аккаунт.
+```bash
+git clone git@github.com:mi-kovalenko/1667995-gllacy-32.git
+```
 
-<img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037742-a62a72a0-7bad-11e7-9f36-4db8e9329498.jpg">
+- via HTTPS:
 
-Получится вот так:
+```bash
+git clone https://github.com/mi-kovalenko/1667995-gllacy-32.git
+```
 
-<img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037746-a760c82c-7bad-11e7-89ab-7c99998d4317.jpg">
+# Start
 
-#### 3. Клонируйте репозиторий на свой компьютер
-
-Будьте внимательны: нужно клонировать свой репозиторий (форк), а не репозиторий Академии. Нажмите кнопку «Clone or download», а затем «Open in Desktop», чтобы клонировать репозиторий через программу [GitHub Desktop](https://desktop.github.com):
-
-<img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037747-a8e89422-7bad-11e7-819d-bca9f4c1de18.jpg">
-
-Программа клонирует репозиторий на ваш компьютер и подготовит всё необходимое для старта работы.
-
-#### 4. Начинайте обучение!
-
----
-
-<a href="https://htmlacademy.ru/intensive/htmlcss"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/htmlcss/logo-for-github-2.png"></a>
-
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[HTML и CSS. Профессиональная вёрстка сайтов](https://htmlacademy.ru/intensive/htmlcss)» от [HTML Academy](https://htmlacademy.ru).
+You can either open index.html and catalogue.html directly in the browser or use "Live Server" extension in VSCode
