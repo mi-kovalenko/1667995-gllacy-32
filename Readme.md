@@ -18,18 +18,20 @@ Popups:
 
 ## Setup
 
-Несколько вариантов:
+- download ZIP  
 
-[Скачать ZIP архив с проектом (прямая ссылка)](https://github.com/ena0berzerk/team-28/archive/refs/heads/main.zip)
-
-Клонировать через SSH:
+- via SSH:
 
 ```bash
 git clone git@github.com:mi-kovalenko/1667995-gllacy-32.git
 ```
 
-Клонировать через HTTPS:
+- via HTTPS:
 
 ```bash
 git clone https://github.com/mi-kovalenko/1667995-gllacy-32.git
 ```
+
+## Start
+
+You can either open index.html and catalogue.html directly in the browser or use "Live Server Extension" in VSCode
