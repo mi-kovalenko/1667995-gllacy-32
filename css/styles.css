@@ -184,23 +184,20 @@ body {
   box-shadow: none;
 }
 
-.popover-categories.open {
+
+.popover-categories {
   position: absolute;
   z-index: 1;
-  top: 40px;
-
-  display: block;
-
+  top: 30px;
+  display: none;
   width: max-content;
-
   border-radius: 4px;
   background-color: var(--basic-extra-light);
-
   filter: drop-shadow(0 8px 16px rgba(45, 52, 64, 0.12));
 }
 
-.popover-categories {
-  display: none;
+.catalog-container:hover .popover-categories {
+  display: block;
 }
 
 .popover-categories-list {
